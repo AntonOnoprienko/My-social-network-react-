@@ -1,0 +1,56 @@
+.app-wrapper {
+	width: 800px;
+	margin: 0 auto;
+	display: grid;
+	
+	grid-template-rows: 90px 1fr;
+	grid-template-columns: 2fr 10fr;
+
+	grid-template-areas: 
+		"h h"
+		"n c";
+}
+
+.header {
+	grid-area: h;
+	background-color: fff;
+	border: solid 2px black;
+	border-radius: 30px;
+	text-align: left;
+	
+}
+.header img {
+	padding-left: 25px;
+	width: 100px;
+
+}
+
+.nav {
+	grid-area: n;
+	padding: 5px;
+	
+	border: solid 2px black;
+	
+	padding-left: 10px;
+	margin: 2px 3px 0 0;
+	
+}
+
+.content {
+	padding:0 px;
+	grid-area: c;
+	
+	border: solid 2px black;
+	;
+	margin-top: 2px;
+}
+
+.walpapper {
+	height: 100px;
+	width: 670px;
+	
+} 
+.avatar {
+	padding-left: 5px;
+	width: 100px;
+}
