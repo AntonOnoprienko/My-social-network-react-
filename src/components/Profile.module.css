@@ -1,0 +1,17 @@
+
+
+.content {
+	grid-area: c;
+	border: solid 2px black;
+	margin-top: 2px;
+}
+.wallpaper {
+	padding: 0;
+}
+.posts{
+	background-color: slategrey;
+}
+.item {
+	color: white;
+	padding: 0 10px;
+}
