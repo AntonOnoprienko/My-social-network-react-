@@ -1,0 +1,10 @@
+
+.item {
+	color: black;
+	padding: 0 10px;
+}
+
+.item img {
+	border-radius: 30px;
+	width: 100px;
+}
