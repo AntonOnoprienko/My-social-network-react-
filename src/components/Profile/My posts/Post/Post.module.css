@@ -1,7 +1,10 @@
 
 .item {
+
+	border-radius: 30px;
+	border: white solid 1px;
 	color: black;
-	padding: 0 10px;
+	padding-left: 20px;
 }
 
 .item img {

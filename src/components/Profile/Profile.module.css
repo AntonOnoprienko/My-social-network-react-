@@ -1,13 +1,4 @@
 
-
-.content {
-	grid-area: c;
-	border: solid 2px black;
-	margin-top: 2px;
-}
-.wallpaper {
-	padding: 0;
-}
 .posts{
 	background-color: slategrey;
 }
@@ -15,3 +6,16 @@
 	color: white;
 	padding: 0 10px;
 }
+
+
+.walpapper {
+	padding: 0;
+	height: 100px;
+	width: 670px;
+	
+} 
+.avatar {
+	padding-left: 5px;
+	width: 100px;
+}
+ 

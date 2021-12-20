@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+.app-wrapper {
+	font-family: PT Sans;
+	width: 800px;
+	margin: 0 auto;
+	display: grid;
+	
+	grid-template-rows: 90px 1fr;
+	grid-template-columns: 2fr 10fr;
+
+	grid-template-areas: 
+		"h h"
+		"n c";
+}
+
+
+
+
+.app-wrapper-content {
+	grid-area: c;
+	border: solid 2px black;
+	margin-top: 2px;
+	background-color:lightsteelblue;
+}
+

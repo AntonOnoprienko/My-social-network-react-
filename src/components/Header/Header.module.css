@@ -1,6 +1,6 @@
 .header {
 	grid-area: h;
-	background-color: fff;
+	background-color:chocolate;
 	border: solid 2px black;
 	border-radius: 30px;
 	text-align: left;
@@ -8,6 +8,6 @@
 }
 .header img {
 	padding-left: 25px;
-	width: 100px;
+	width: 77px;
 
 }
