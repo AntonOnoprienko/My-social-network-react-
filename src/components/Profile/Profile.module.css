@@ -1,21 +1,26 @@
 
-.posts{
-	background-color: slategrey;
-}
-.item {
-	color: white;
-	padding: 0 10px;
-}
 
+.myInfo{
 
+display: flex;
+flex-direction: row;
+} 
+ul {margin: 0 -20px;
+   list-style-type: none; 
+	font-size: 20px;
+}
 .walpapper {
-	padding: 0;
 	height: 100px;
 	width: 670px;
 	
 } 
 .avatar {
-	padding-left: 5px;
-	width: 100px;
+	border: 1px solid black;
+	margin-left: 5px;
+	width: 179px;
 }
  
+
+.posts{
+	background-color: slategrey;
+}
