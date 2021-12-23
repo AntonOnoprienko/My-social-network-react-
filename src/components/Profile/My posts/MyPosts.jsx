@@ -6,11 +6,13 @@ const MyPosts = () => {
 	return (
 		<div className={classes.content}>
 			<div className={classes.posts}>
-				<textarea></textarea>
-				<button>Add Post</button>
-				<div >
-					   
+				<div>
+					<textarea></textarea>
 				</div>
+				<div>
+					<button>Add Post</button>
+				</div>
+				
 				<Post src='http://risovach.ru/thumb/upload/200s400/2014/07/generator/vau_55876037_orig_.jpeg?5u8zq' name='Arthur Onoprienko'message='Всем привет я тут новенький!!' likesCount='23'/>
 				<Post src='https://www.meme-arsenal.com/memes/a5dd2f55b36488a10172f4f84352846b.jpg' name='Vitalii Shmatko' message='Это будет собачья вписка' likesCount='0' />
 				<Post src='https://meragor.com/files/styles//ava_800_800_wm/standoff_1q.png' name='Denis TitovGym'message='Приходите качать банки!' likesCount='3' />

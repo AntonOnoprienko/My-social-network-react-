@@ -1,3 +1,6 @@
 textarea {
 margin-left: 5px;
 }
+button {
+	margin: 0 0 10px 5px;
+}
