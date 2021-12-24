@@ -3,6 +3,14 @@ import Post from './Post/Post';
 
 
 const MyPosts = () => {
+	let postsData = [
+	{ id: 1, name: 'Arthur Onoprienko',message:'Всем привет я тут новенький!!', url:'https://www.blast.hk/attachments/68493/', likeCount: 5 },
+	{ id: 2, name: 'Denis Titov', message:'Я качаю банки как зверь!', url:'https://meragor.com/files/styles//ava_800_800_wm/standoff_1q.png', likeCount: 0 },
+	{ id: 3, name: 'Daria Onoprienko', message:'Будешь ехать домой, купи чипсиков!', url:'https://i.pinimg.com/736x/84/dd/6e/84dd6e50b90c7bf1319ebbc3711cfff4.jpg',likeCount: 3 },
+	{ id: 4, name: 'Ksenia Gulchinskaya', message:'Я опаздываю на работу', url:'https://author.today/content/2021/03/25/8488dde4a706465f96bf00ec457e4ec3.png',likeCount: 12 },
+	{ id: 5, name: 'Anton Taran', message:'Тебе еду сегодня привозить?', url:'https://download-cs.net/steam/avatars/3434.jpg',likeCount: 72 },
+	{ id: 6, name: 'Vitalii Shmatko', message:'Это будет собачья вписка', url:'https://www.meme-arsenal.com/memes/a5dd2f55b36488a10172f4f84352846b.jpg',likeCount: 23 }
+	]
 	return (
 		<div className={classes.content}>
 			<div className={classes.posts}>
@@ -13,12 +21,13 @@ const MyPosts = () => {
 					<button>Add Post</button>
 				</div>
 				
-				<Post src='http://risovach.ru/thumb/upload/200s400/2014/07/generator/vau_55876037_orig_.jpeg?5u8zq' name='Arthur Onoprienko'message='Всем привет я тут новенький!!' likesCount='23'/>
-				<Post src='https://www.meme-arsenal.com/memes/a5dd2f55b36488a10172f4f84352846b.jpg' name='Vitalii Shmatko' message='Это будет собачья вписка' likesCount='0' />
-				<Post src='https://meragor.com/files/styles//ava_800_800_wm/standoff_1q.png' name='Denis TitovGym'message='Приходите качать банки!' likesCount='3' />
-				<Post src='https://www.meme-arsenal.com/memes/943b2cfb8850675319679ce91ebc5609.jpg' name='Ksenia Gulchinskaya' message='it is very nice'likesCount='0' />
-				<Post src='https://shapka-youtube.ru/wp-content/uploads/2021/04/prikolnaya-avatarka.jpg' name='Пуцькис Onoprienko'message='I am happy' likesCount='0'/>
-				<Post src='https://i.pinimg.com/736x/84/dd/6e/84dd6e50b90c7bf1319ebbc3711cfff4.jpg' name='Пуцька Onoprienko'message='Будешь ехать домой, купи чипсиков!' likesCount='738'/>
+				<Post src={postsData[0].url } name={postsData[0].name } message={postsData[0].message } likesCount={postsData[0].likeCount } />
+				<Post src={postsData[1].url } name={postsData[1].name } message={postsData[1].message } likesCount={postsData[1].likeCount } />
+				<Post src={postsData[2].url } name={postsData[2].name } message={postsData[2].message } likesCount={postsData[2].likeCount } />
+				<Post src={postsData[3].url } name={postsData[3].name } message={postsData[3].message } likesCount={postsData[3].likeCount } />
+				<Post src={postsData[4].url } name={postsData[4].name } message={postsData[4].message } likesCount={postsData[4].likeCount } />
+				<Post src={postsData[5].url } name={postsData[5].name } message={postsData[5].message } likesCount={postsData[5].likeCount } />
+				
 				
 			  </div>
 		  </div>

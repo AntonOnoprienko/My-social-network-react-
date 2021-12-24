@@ -2,34 +2,43 @@
 	display: grid;
 	grid-template-columns: 2fr 4fr;
 }
-.dialogsItems{
-padding: 15px;
-}
-.item{
 
+.dialog a{
+	text-decoration: none;
+	color: black;
+}
+
+.dialogsItems{
+	padding: 15px;
 }
 
 .messages{
-
-background-color: black;
-border-radius:  30px 0 0 30px;
-color: white;
-font-style: italic;
-padding: 10px;
+	background-color: black;
+	border-radius:  30px 0 0 30px;
+	color: white;
+	font-style: italic;
+	padding: 10px;
 }
-.messages.message {
 
-}
-.dialogsItems .active {
-	color:white;
-	font-size: 18px;
-	text-shadow: 2px 2px 1px black;
-	font-weight: 500;
+.dialogsItems :nth-child(2) {
 	
-
+	font-size: 18px;
+	text-shadow: 3px 3px 2px whitesmoke;
+	font-weight: 700;
 } 
+
 .dialogsItems img {
 	width: 30px;
 	margin-right: 5px;
+	border:1px black solid;
+	border-radius: 50%;
+}
+.messages{
+	padding: 10px 0 10px 20px;
+}
+
+.messages img{
+	margin-right: 10px ;
+	width: 30px;
 	border-radius: 50%;
 }
