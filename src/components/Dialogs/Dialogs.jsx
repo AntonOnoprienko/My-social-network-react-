@@ -3,8 +3,8 @@ import classes from './Dialogs.module.css'
 import Message from './Message/Message';
 
 const Dialogs = (props) => {
-	let dialogsElements = props.dialogsData.map ( d => <DialogItem id= {d.id} name= {d.name} url= { d.url } />)
-	let messagesElements = props.messagesData.map ( m => <Message message={  m.message} url={ m.url }/> )
+	let dialogsElements = props.state.dialogsData.map ( d => <DialogItem id= {d.id} name= {d.name} url= { d.url } />)
+	let messagesElements = props.state.messagesData.map ( m => <Message message={  m.message} url={ m.url }/> )
 		
 	return (
 		<div className = { classes.dialogs } >

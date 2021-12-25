@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import News from "./components/news/News";
 import Music from "./components/music/Music";
 import Settings from "./components/Settings/Settings";
+
 function App(props) {
   return (
     <BrowserRouter>
@@ -18,16 +19,11 @@ function App(props) {
           <Routes>
             <Route
               path="/dialogs"
-              element={
-                <Dialogs
-                  dialogsData={props.dialogsData}
-                  messagesData={props.messagesData}
-                />
-              }
+              element={<Dialogs state={props.state.chatPage} />}
             />
             <Route
               path="/profile"
-              element={<Profile postsData={props.postsData} />}
+              element={<Profile state={props.state.profilePage} />}
             />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
