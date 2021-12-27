@@ -1,4 +1,5 @@
 .nav {
+	min-height: 300px;
 	grid-area: n;
 	padding: 5px;
 	border: solid 2px black;
@@ -17,4 +18,19 @@ a.item {
 	font-weight: 400;
 	text-decoration:none;
 	text-shadow: 2px 2px 4px black;
+}
+
+.friends {
+	margin-top: 100px;
+}
+.friendsIcons {
+	display: flex;
+	flex-direction: row;
+	
+
+}
+.friendsIcons a{
+	width: 33%;
+	text-decoration: none;
+
 }

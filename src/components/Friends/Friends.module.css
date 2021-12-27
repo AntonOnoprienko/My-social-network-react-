@@ -1,0 +1,21 @@
+.icon {
+margin-top: 20px;
+width: 33%;
+height: 30px;
+}
+
+.item {
+	color: white;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	font-size: 10px;
+}
+.item img {
+	border-radius: 50%;
+	width: 25px;
+}
+
+
+
+

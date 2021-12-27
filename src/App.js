@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import News from "./components/news/News";
 import Music from "./components/music/Music";
 import Settings from "./components/Settings/Settings";
+import { FriendsList } from "./components/Friends/FriendsList";
 
 function App(props) {
   return (
