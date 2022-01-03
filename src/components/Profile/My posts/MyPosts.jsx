@@ -16,7 +16,6 @@ const MyPosts = (props) => {
 		props.addPost(text)
 	}
 	
-	
 	return (
 		<div className={classes.content}>
 			<div className={classes.posts}>

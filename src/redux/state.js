@@ -1,3 +1,5 @@
+import { rerenderEtireTree } from "../render";
+
 let state = {
   chatPage: {
     dialogsData: [
@@ -143,10 +145,23 @@ let state = {
 export let addPost = (postMessage) => {
   let newPost = {
     id: 9,
+    name: "Anton Onoprienko",
     message: postMessage,
+    url: "https://bipbap.ru/wp-content/uploads/2019/07/Samye-prikolnye-kartinki-dlya-devochek-dlya-srisovki-na-bumagu-1.jpg",
     likesCount: 0,
   };
   state.profilePage.postsData.push(newPost);
+  rerenderEtireTree(state);
 };
 
+export let addMessage = (textMessage) => {
+  let newMessage = {
+    id: 0,
+    name: "Anton Onoprienko",
+    message: textMessage,
+    url: "https://bipbap.ru/wp-content/uploads/2019/07/Samye-prikolnye-kartinki-dlya-devochek-dlya-srisovki-na-bumagu-1.jpg",
+  };
+  state.chatPage.messagesData.push(newMessage);
+  rerenderEtireTree(state);
+};
 export default state;
