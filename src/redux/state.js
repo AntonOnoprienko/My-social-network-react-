@@ -1,4 +1,4 @@
-import { rerenderEtireTree } from "../render";
+import { rerenderEntireTree } from "../render";
 
 let state = {
   chatPage: {
@@ -139,19 +139,21 @@ let state = {
         likeCount: 441,
       },
     ],
+    newPostText: "",
   },
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     id: 9,
     name: "Anton Onoprienko",
-    message: postMessage,
+    message: state.profilePage.newPostText,
     url: "https://bipbap.ru/wp-content/uploads/2019/07/Samye-prikolnye-kartinki-dlya-devochek-dlya-srisovki-na-bumagu-1.jpg",
     likesCount: 0,
   };
   state.profilePage.postsData.push(newPost);
-  rerenderEtireTree(state);
+  state.profilePage.newPostText = "";
+  rerenderEntireTree(state);
 };
 
 export let addMessage = (textMessage) => {
@@ -162,6 +164,12 @@ export let addMessage = (textMessage) => {
     url: "https://bipbap.ru/wp-content/uploads/2019/07/Samye-prikolnye-kartinki-dlya-devochek-dlya-srisovki-na-bumagu-1.jpg",
   };
   state.chatPage.messagesData.push(newMessage);
-  rerenderEtireTree(state);
+  rerenderEntireTree(state);
+};
+
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+
+  rerenderEntireTree(state);
 };
 export default state;
