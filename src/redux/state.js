@@ -72,6 +72,7 @@ let state = {
         url: "http://risovach.ru/thumb/upload/200s400/2014/07/generator/vau_55876037_orig_.jpeg?5u8zq",
       },
     ],
+    newMessageText: "",
   },
   profilePage: {
     postsData: [
@@ -156,19 +157,26 @@ export let addPost = () => {
   rerenderEntireTree(state);
 };
 
-export let addMessage = (textMessage) => {
+export let addMessage = () => {
   let newMessage = {
     id: 0,
     name: "Anton Onoprienko",
-    message: textMessage,
+    message: state.chatPage.newMessageText,
     url: "https://bipbap.ru/wp-content/uploads/2019/07/Samye-prikolnye-kartinki-dlya-devochek-dlya-srisovki-na-bumagu-1.jpg",
   };
   state.chatPage.messagesData.push(newMessage);
+  state.chatPage.newMessageText = "";
   rerenderEntireTree(state);
 };
 
 export let updateNewPostText = (newText) => {
   state.profilePage.newPostText = newText;
+
+  rerenderEntireTree(state);
+};
+
+export let updateNewMessageText = (newText) => {
+  state.chatPage.newMessageText = newText;
 
   rerenderEntireTree(state);
 };
