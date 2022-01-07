@@ -1,7 +1,5 @@
 let store = {
-  rerenderEntireTree: function () {},
-
-  state: {
+  _state: {
     chatPage: {
       dialogsData: [
         {
@@ -144,47 +142,53 @@ let store = {
       newPostText: "",
     },
   },
-
-  addPost: function () {
+  getState() {
+    return this._state;
+  },
+  _callSubscriber() {
+    console.log("State changed");
+  },
+  addPost() {
     let newPost = {
       id: 9,
       name: "Anton Onoprienko",
-      message: state.profilePage.newPostText,
+      message: this._state.profilePage.newPostText,
       url: "https://bipbap.ru/wp-content/uploads/2019/07/Samye-prikolnye-kartinki-dlya-devochek-dlya-srisovki-na-bumagu-1.jpg",
       likesCount: 0,
     };
-    state.profilePage.postsData.push(newPost);
-    state.profilePage.newPostText = "";
-    rerenderEntireTree(state);
+    this._state.profilePage.postsData.push(newPost);
+    this._state.profilePage.newPostText = "";
+    this._callSubscriber(this._state);
   },
 
-  addMessage: function () {
+  addMessage() {
     let newMessage = {
       id: 0,
       name: "Anton Onoprienko",
-      message: state.chatPage.newMessageText,
+      message: this._state.chatPage.newMessageText,
       url: "https://bipbap.ru/wp-content/uploads/2019/07/Samye-prikolnye-kartinki-dlya-devochek-dlya-srisovki-na-bumagu-1.jpg",
     };
-    state.chatPage.messagesData.push(newMessage);
-    state.chatPage.newMessageText = "";
-    rerenderEntireTree(state);
+    this._state.chatPage.messagesData.push(newMessage);
+    this._state.chatPage.newMessageText = "";
+    this._callSubscriber(this._state);
   },
 
-  updateNewPostText: function (newText) {
-    state.profilePage.newPostText = newText;
+  updateNewPostText(newText) {
+    this._state.profilePage.newPostText = newText;
 
-    rerenderEntireTree(state);
+    this._callSubscriber(this._state);
   },
 
-  updateNewMessageText: function (newText) {
-    state.chatPage.newMessageText = newText;
+  updateNewMessageText(newText) {
+    this._state.chatPage.newMessageText = newText;
 
-    rerenderEntireTree(state);
+    this._callSubscriber(this._state);
   },
 
-  subscribe: function (observer) {
-    rerenderEntireTree = observer;
+  subscribe(observer) {
+    this._callSubscriber = observer;
   },
 };
 
 export default store;
+window.store = store;
