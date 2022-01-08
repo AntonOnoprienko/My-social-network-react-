@@ -142,12 +142,16 @@ let store = {
       newPostText: "",
     },
   },
-  getState() {
-    return this._state;
-  },
   _callSubscriber() {
     console.log("State changed");
   },
+  getState() {
+    return this._state;
+  },
+  subscribe(observer) {
+    this._callSubscriber = observer;
+  },
+
   addPost() {
     let newPost = {
       id: 9,
@@ -184,11 +188,36 @@ let store = {
 
     this._callSubscriber(this._state);
   },
-
-  subscribe(observer) {
-    this._callSubscriber = observer;
+  dispatch(action) {
+    if (action.type === "ADD_POST") {
+      let newPost = {
+        id: 9,
+        name: "Anton Onoprienko",
+        message: this._state.profilePage.newPostText,
+        url: "https://bipbap.ru/wp-content/uploads/2019/07/Samye-prikolnye-kartinki-dlya-devochek-dlya-srisovki-na-bumagu-1.jpg",
+        likesCount: 0,
+      };
+      this._state.profilePage.postsData.push(newPost);
+      this._state.profilePage.newPostText = "";
+      this._callSubscriber(this._state);
+    } else if (action.type === "ADD-MESSAGE") {
+      let newMessage = {
+        id: 0,
+        name: "Anton Onoprienko",
+        message: this._state.chatPage.newMessageText,
+        url: "https://bipbap.ru/wp-content/uploads/2019/07/Samye-prikolnye-kartinki-dlya-devochek-dlya-srisovki-na-bumagu-1.jpg",
+      };
+      this._state.chatPage.messagesData.push(newMessage);
+      this._state.chatPage.newMessageText = "";
+      this._callSubscriber(this._state);
+    } else if (action.type === "UPDATE-NEW-MESSAGE-TEXT") {
+      this._state.chatPage.newMessageText = action.newText;
+      this._callSubscriber(this._state);
+    } else if (action.type === "UPDATE-NEW_POST_TEXT") {
+      this._state.profilePage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    }
   },
 };
-
 export default store;
 window.store = store;
