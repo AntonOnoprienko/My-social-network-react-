@@ -23,7 +23,7 @@ function App(props) {
               element={
                 <Dialogs
                   chatPage={props.state.chatPage}
-                  disptch={props.dispatch}
+                  dispatch={props.dispatch}
                 />
               }
             />

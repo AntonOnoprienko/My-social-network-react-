@@ -8,14 +8,13 @@ const Dialogs = (props) => {
 	let messagesElements = props.chatPage.messagesData.map ( m => <Message message={  m.message} url={ m.url }/> )
 	
 	let addMessage = () => {
-		let text = addMessageElement.current.value;
-		props.addMessage(text);
+		props.dispatch({ type: 'ADD-MESSAGE'})
 		
 
 	}
 	let onMessageChange = () => {
 		let text = addMessageElement.current.value;
-		props.updateNewMessageText(text);
+		props.dispatch({ type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text})
 	}
 	let addMessageElement = React.createRef();
 
