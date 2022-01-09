@@ -10,7 +10,7 @@ const ProfileInfo = () => {
 
 			<div className={ classes.myInfo }>
 				<div>
-					<img className={classes.avatar} src='https://bipbap.ru/wp-content/uploads/2019/07/Samye-prikolnye-kartinki-dlya-devochek-dlya-srisovki-na-bumagu-1.jpg' />
+					<img className={classes.avatar} src='https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png' />
 				</div>
 				<div className={classes.aboutMySelf}>
 					<ul>

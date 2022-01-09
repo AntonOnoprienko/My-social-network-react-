@@ -58,7 +58,7 @@ let store = {
         {
           id: 3,
           message: "Hi, i am fine",
-          url: "https://bipbap.ru/wp-content/uploads/2019/07/Samye-prikolnye-kartinki-dlya-devochek-dlya-srisovki-na-bumagu-1.jpg",
+          url: "https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png",
         },
         {
           id: 4,
@@ -68,7 +68,7 @@ let store = {
         {
           id: 5,
           message: "I want to go for a walk",
-          url: "https://bipbap.ru/wp-content/uploads/2019/07/Samye-prikolnye-kartinki-dlya-devochek-dlya-srisovki-na-bumagu-1.jpg",
+          url: "https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png",
         },
         {
           id: 6,
@@ -164,7 +164,7 @@ let store = {
         id: 9,
         name: "Anton Onoprienko",
         message: this._state.profilePage.newPostText,
-        url: "https://bipbap.ru/wp-content/uploads/2019/07/Samye-prikolnye-kartinki-dlya-devochek-dlya-srisovki-na-bumagu-1.jpg",
+        url: "https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png",
         likesCount: 0,
       };
       this._state.profilePage.postsData.push(newPost);
@@ -175,7 +175,7 @@ let store = {
         id: 0,
         name: "Anton Onoprienko",
         message: this._state.chatPage.newMessageText,
-        url: "https://bipbap.ru/wp-content/uploads/2019/07/Samye-prikolnye-kartinki-dlya-devochek-dlya-srisovki-na-bumagu-1.jpg",
+        url: "https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png",
       };
       this._state.chatPage.messagesData.push(newMessage);
       this._state.chatPage.newMessageText = "";
