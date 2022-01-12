@@ -3,8 +3,8 @@ import profileReduser from "./profilePageReduser";
 import chatReduser from "./chatPageReduser";
 
 let reducers = combineReducers({
-  profileReduser: profileReduser,
-  chatReduser: chatReduser,
+  profilePage: profileReduser,
+  chatPage: chatReduser,
 });
 
 let store = createStore(reducers);
