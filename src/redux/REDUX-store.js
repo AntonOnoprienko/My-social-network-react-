@@ -1,10 +1,10 @@
 import { combineReducers, createStore } from "redux";
-import profileReduser from "./profilePageReduser";
-import chatReduser from "./chatPageReduser";
+import profileReduсer from "./profilePageReduсer";
+import chatReduсer from "./chatPageReduсer";
 
 let reducers = combineReducers({
-  profilePage: profileReduser,
-  chatPage: chatReduser,
+  profilePage: profileReduсer,
+  chatPage: chatReduсer,
 });
 
 let store = createStore(reducers);

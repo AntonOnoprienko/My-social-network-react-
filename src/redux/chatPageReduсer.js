@@ -75,7 +75,7 @@ let initialState = {
   newMessageText: "",
 };
 
-const chatReduser = (state = initialState, action) => {
+const chatReduсer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_MESSAGE:
       let newMessage = {
@@ -101,4 +101,4 @@ export const updateNewMessageTextActionCreator = (text) => ({
   type: UPDATE_NEW_MESSAGE_TEXT,
   newText: text,
 });
-export default chatReduser;
+export default chatReduсer;

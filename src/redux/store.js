@@ -1,5 +1,5 @@
-import chatReduser from "./chatPageReduser";
-import profileReduser from "./profilePageReduser";
+import chatReduсer from "./chatPageReduсer";
+import profileReduсer from "./profilePageReduсer";
 
 let store = {
   _state: {
@@ -157,8 +157,8 @@ let store = {
   },
 
   dispatch(action) {
-    this._state.profilePage = profileReduser(this._state.profilePage, action);
-    this._state.chatPage = chatReduser(this._state.chatPage, action);
+    this._state.profilePage = profileReduсer(this._state.profilePage, action);
+    this._state.chatPage = chatReduсer(this._state.chatPage, action);
 
     this._callSubscriber(this._state);
   },

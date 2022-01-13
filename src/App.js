@@ -2,7 +2,7 @@ import "./App.css";
 import Profile from "./components/Profile/Profile.jsx";
 import Header from "./components/Header/Header";
 import Nav from "./components/Navbar/Navbar";
-import Dialogs from "./components/Dialogs/Dialogs";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import { Route, Routes } from "react-router-dom";
 import News from "./components/news/News";
 import Music from "./components/music/Music";
@@ -19,9 +19,10 @@ function App(props) {
           <Route
             path="/dialogs"
             element={
-              <Dialogs
-                chatPage={props.state.chatPage}
-                dispatch={props.dispatch}
+              <DialogsContainer
+                store={props.store}
+                //chatPage={props.state.chatPage}
+                //dispatch={props.dispatch}
               />
             }
           />
@@ -29,6 +30,7 @@ function App(props) {
             path="/profile"
             element={
               <Profile
+                store={props.store}
                 profilePage={props.state.profilePage}
                 dispatch={props.dispatch}
               />
