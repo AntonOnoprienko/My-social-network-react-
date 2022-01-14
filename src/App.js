@@ -7,7 +7,6 @@ import { Route, Routes } from "react-router-dom";
 import News from "./components/news/News";
 import Music from "./components/music/Music";
 import Settings from "./components/Settings/Settings";
-import { FriendsList } from "./components/Friends/FriendsList";
 
 function App(props) {
   return (
@@ -18,9 +17,18 @@ function App(props) {
         <Routes>
           <Route
             path="/dialogs"
-            element={<DialogsContainer store={props.store} />}
+            element={
+              <DialogsContainer //store={props.store}
+              />
+            }
           />
-          <Route path="/profile" element={<Profile store={props.store} />} />
+          <Route
+            path="/profile"
+            element={
+              <Profile //store={props.store} />}
+              />
+            }
+          />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />
           <Route path="/settings" element={<Settings />} />
