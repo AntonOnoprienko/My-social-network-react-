@@ -1,4 +1,4 @@
-import StoreContext from '../../StoreContext';
+
 import MyPostsContainer from './My posts/MyPostsContainer'
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
@@ -9,7 +9,7 @@ const Profile = (props) => {
 		<div>
 			<ProfileInfo />
 			
-			<MyPostsContainer /*store={//props.store}*/ />
+			<MyPostsContainer />
 			
 		  </div>
 		  
