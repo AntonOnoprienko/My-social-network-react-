@@ -5,10 +5,8 @@ import React from 'react';
 
 
 const Dialogs = (props) => {
-	let state = props.chatPage
-	let dialogsElements = state.dialogsData.map ( d => <DialogItem id= {d.id} name= {d.name} url= { d.url } />)
-	let messagesElements = state.messagesData.map ( m => <Message message={  m.message} url={ m.url }/> )
-	let newMessageBody = state.newMessageText;
+	let dialogsElements = props.chatPage.dialogsData.map ( d => <DialogItem id= {d.id} name= {d.name} url= { d.url } />)
+	let messagesElements =props.chatPage.messagesData.map ( m => <Message message={  m.message} url={ m.url }/> )
 
 	let onSendMessageClick = () => {
 		props.sendMessage()
@@ -30,7 +28,7 @@ const Dialogs = (props) => {
 
 			<div className= {classes.messages }>
 				{messagesElements}
-				<textarea  placeholder='Enter your message' onChange={onMessageChange} value={ newMessageBody } />
+				<textarea  placeholder='Enter your message' onChange={onMessageChange} value={ props.newMessageText } />
 				<button onClick={ onSendMessageClick }>send message </button>
 			</div>
 			

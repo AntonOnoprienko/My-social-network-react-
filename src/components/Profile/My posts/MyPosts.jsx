@@ -5,11 +5,12 @@ import React from 'react';
 
 
 const MyPosts = (props) => {
+	
 
 	let postsElements =
 		props.postsData.map(p => <Post src={p.url} name={p.name} message={p.message} likesCount={p.likeCount} />);
 	
-	let addPost = () => {
+	let addPostBody = () => {
 		props.addPost();
 	}
 
@@ -24,7 +25,7 @@ const MyPosts = (props) => {
 					<textarea onChange={ onPostChange } value={ props.newPostText}/>
 				</div>
 				<div>
-					<button onClick={ addPost }>Add Post</button>
+					<button onClick={ addPostBody }>Add Post</button>
 				</div>
 					{ postsElements }
 				</div>

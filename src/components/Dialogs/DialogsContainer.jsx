@@ -1,6 +1,11 @@
 import Dialogs from './Dialogs';
 import { addMessageActionCreator, updateNewMessageTextActionCreator} from '../../redux/chatPageReduсer';
 import { connect } from 'react-redux'
+
+
+
+
+
 let mapStateToProps = (state) => {
 	return {
 		chatPage: state.chatPage,
