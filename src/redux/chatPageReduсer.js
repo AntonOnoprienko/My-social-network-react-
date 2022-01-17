@@ -77,20 +77,23 @@ let initialState = {
 
 const chatReduсer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_MESSAGE:
+    case ADD_MESSAGE: {
       let newMessage = {
         id: 0,
         name: "Anton Onoprienko",
         message: state.newMessageText,
         url: "https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png",
       };
-      state.messagesData.push(newMessage);
-      state.newMessageText = "";
-      return state;
-
+      let stateCopy = { ...state };
+      stateCopy.messagesData = [...state.messagesData];
+      stateCopy.messagesData.push(newMessage);
+      stateCopy.newMessageText = "";
+      return stateCopy;
+    }
     case UPDATE_NEW_MESSAGE_TEXT:
-      state.newMessageText = action.newText;
-      return state;
+      let stateCopy = { ...state };
+      stateCopy.newMessageText = action.newText;
+      return stateCopy;
 
     default:
       return state;
