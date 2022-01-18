@@ -5,8 +5,8 @@ import React from 'react';
 
 
 const Dialogs = (props) => {
-	let dialogsElements = props.chatPage.dialogsData.map ( d => <DialogItem id= {d.id} name= {d.name} url= { d.url } />)
-	let messagesElements =props.chatPage.messagesData.map ( m => <Message message={  m.message} url={ m.url }/> )
+	let dialogsElements = props.chatPage.dialogsData.map(d => <DialogItem key={d.id} id= {d.id} name= {d.name} url= { d.url } />)
+	let messagesElements = props.chatPage.messagesData.map(m => <Message key={m.id} message={  m.message} url={ m.url }/> )
 
 	let onSendMessageClick = () => {
 		props.sendMessage()

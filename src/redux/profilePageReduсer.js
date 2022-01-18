@@ -72,7 +72,7 @@ let initialState = {
 
 const profileReduсer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_POST: {
+    case ADD_POST:
       let newPost = {
         id: 9,
         name: "Anton Onoprienko",
@@ -80,17 +80,17 @@ const profileReduсer = (state = initialState, action) => {
         url: "https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png",
         likesCount: 0,
       };
-      let stateCopy = { ...state };
-      stateCopy.postsData = [...state.postsData];
-      stateCopy.postsData.push(newPost);
-      stateCopy.newPostText = "";
-      return stateCopy;
-    }
-    case UPDATE_NEW_POST_TEXT:
-      let stateCopy = { ...state };
-      stateCopy.newPostText = action.newText;
-      return stateCopy;
+      return {
+        ...state,
+        postsData: [newPost, ...state.postsData],
+        newPostText: "",
+      };
 
+    case UPDATE_NEW_POST_TEXT:
+      return {
+        ...state,
+        newPostText: action.newText,
+      };
     default:
       return state;
   }
