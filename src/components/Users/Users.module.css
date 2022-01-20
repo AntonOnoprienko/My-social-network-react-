@@ -1,0 +1,46 @@
+.wrapper{
+	display: grid;
+	grid-template-columns: 2fr 10fr;
+	border: 1px solid black;
+}
+.sidebar {
+	
+
+}
+
+.buttonfollow {
+	width: 100%;
+	text-align: center;
+	margin: 5px 0px;
+}
+
+.avatar {
+	padding: 5px;
+	width: 100px;
+}
+.fullname {
+	font-size: 20px;
+	grid-area: nam;
+
+}
+.status{
+	color: darcgrey;
+	font-style: italic;
+	grid-area: sta;
+}
+.location{
+ grid-area: loc;
+ margin-right: 5px;
+}
+
+.userinfo {
+padding: 5px;
+display: grid;
+grid-template-rows: 90px 1fr;
+grid-template-columns: 3fr 7fr;
+grid-template-areas: 
+'nam nam loc'
+'nam nam loc'
+'sta sta loc';
+
+}

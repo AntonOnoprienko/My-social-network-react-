@@ -21,7 +21,7 @@ const Navbar = () => {
 				  <NavLink to='/settings' className = { navData => navData.isActive ? classes.active : classes.item } >Settings</NavLink>
 				</div>
 				<div className={classes.friends}>
-				  <NavLink to='/friends' className = { navData => navData.isActive ? classes.active : classes.item } >Friends</NavLink>
+				  <NavLink to='/users' className = { navData => navData.isActive ? classes.active : classes.item } >Friends</NavLink>
 			</div>
 			<div className={classes.friendsIcons}>
 			<NavLink to='#'><Friends name='Arthur' url='https://www.blast.hk/attachments/68493/' /></NavLink>
