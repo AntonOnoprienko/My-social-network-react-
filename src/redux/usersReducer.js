@@ -4,7 +4,7 @@ const SET_USERS = "SET_USERS";
 
 let initialState = {
   users: [
-    {
+    /*{
       id: 1,
       fullName: "Denis Titov",
       followed: false,
@@ -35,7 +35,7 @@ let initialState = {
       url: "https://www.meme-arsenal.com/memes/a5dd2f55b36488a10172f4f84352846b.jpg",
       status: "Гуляю с собакой",
       location: { city: "Kharkiv", country: "Ukraine" },
-    },
+    },*/
   ],
 };
 
