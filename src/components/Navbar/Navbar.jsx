@@ -20,13 +20,14 @@ const Navbar = () => {
 			  <div className={classes.item}>
 				  <NavLink to='/settings' className = { navData => navData.isActive ? classes.active : classes.item } >Settings</NavLink>
 				</div>
-				<div className={classes.friends}>
+				<div className={classes.users}>
 				  <NavLink to='/users' className = { navData => navData.isActive ? classes.active : classes.item } >USERS</NavLink>
 			</div>
+				<div className={classes.friends}>
+				  <NavLink to='/friends' className = { navData => navData.isActive ? classes.active : classes.item } >FRIENDS</NavLink>
+			</div>
 			<div className={classes.friendsIcons}>
-			<NavLink to='#'><Friends name='Arthur' url='https://www.blast.hk/attachments/68493/' /></NavLink>
-			<NavLink to='#'><Friends name='Denis' url='https://meragor.com/files/styles//ava_800_800_wm/standoff_1q.png' /></NavLink>
-			<NavLink to='#'><Friends name='Vitalii' url='https://www.meme-arsenal.com/memes/a5dd2f55b36488a10172f4f84352846b.jpg' /></NavLink> 
+			 
 			</div>
 </nav>
 	)

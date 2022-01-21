@@ -1,21 +1,47 @@
-.icon {
-margin-top: 20px;
-width: 33%;
-height: 30px;
+
+.wrapper{
+	display: grid;
+	grid-template-columns: 2fr 10fr;
+	border: 1px solid black;
 }
 
-.item {
-	color: white;
-	width: 25px;
-	height: 25px;
+
+.buttonfollow {
+	width: 100%;
 	text-align: center;
-	font-size: 10px;
-}
-.item img {
-	border-radius: 50%;
-	width: 25px;
+	margin: 5px 0px;
 }
 
+.avatar {
+	padding: 5px;
+	width: 100px;
+}
+.fullname {
+	font-size: 20px;
+	grid-area: nam;
+
+}
+.status{
+	color: darcgrey;
+	font-style: italic;
+	grid-area: sta;
+}
+.location{
+ grid-area: loc;
+ margin-right: 5px;
+}
+
+.userinfo {
+padding: 5px;
+display: grid;
+grid-template-rows: 90px 1fr;
+grid-template-columns: 3fr 7fr;
+grid-template-areas: 
+'nam nam loc'
+'nam nam loc'
+'sta sta loc';
+
+}
 
 
 
