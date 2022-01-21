@@ -1,6 +1,7 @@
 import React from "react";
 import classes from './Users.module.css'
 import * as axios from 'axios'
+import userPhoto from '../../assets/images/Usericon.png'
 
 
 const Users = (props) => {
@@ -18,7 +19,7 @@ const Users = (props) => {
 			props.users.map((u) => <div key={u.id}>
 				<div className={ classes.wrapper}>
 					<div className={ classes.sidebar}>
-						<img className={classes.avatar} src={u.photos.small} />
+						<img className={classes.avatar} src={u.photos.small != null ? u.photos.small : userPhoto } />
 						
 						<div className={classes.buttonfollow}>
 							{u.followed
