@@ -3,33 +3,34 @@ import classes from './Friends.module.css'
 
 
 class Friends extends React.Component {
+	
 	render() {
 		return <div>
 			{
-				this.props.users.map((u) => {
-					return <div key={u.id}>
+				this.props.users.map((f) => {
+					return <div key={f.id}>
 						<div className={classes.wrapper}>
 							<div className={classes.sidebar}>
-								<img className={classes.avatar} src={u.url} />
+								<img className={classes.avatar} src={f.url} />
 
 								<div className={classes.buttonfollow}>
-									{u.followed
-										? <button onClick={() => { this.props.unfollow(u.id); } }>Unfollow </button>
-										: <button onClick={() => { this.props.follow(u.id); } }>Follow </button>}
+									{f.followed
+										? <button onClick={() => { this.props.unfollow(f.id); } }>Unfollow </button>
+										: <button onClick={() => { this.props.follow(f.id); } }>Follow </button>}
 								</div>
 							</div>
 							<div className={classes.userinfo}>
-								<div className={classes.fullname}>{u.fullName}</div>
-								<div className={classes.status}>{u.status}</div>
+								<div className={classes.fullname}>{f.fullName}</div>
+								<div className={classes.status}>{f.status}</div>
 								<div className={classes.location}>
-									<div>{u.location.city}</div>
-									<div>{u.location.country}</div>
+									<div>{f.location.city}</div>
+									<div>{f.location.country}</div>
 								</div>
 							</div>
 						</div>
-					</div>;
+					</div>
 				})
-			};
+			}
 		</div>
 	};
 };
