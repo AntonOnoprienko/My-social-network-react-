@@ -1,7 +1,12 @@
+
 import classes from '../Profile.module.css'
+import Preloader from '../../Common/Preloader/Preloader'
 
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+	if (!props.profile) {
+		return <Preloader/>
+	}
 	return (
 		<div>
 			<div>
@@ -10,14 +15,21 @@ const ProfileInfo = () => {
 
 			<div className={ classes.myInfo }>
 				<div>
-					<img className={classes.avatar} src='https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png' />
+					<img className={classes.avatar} src={ props.profile.photos.large}/>
 				</div>
 				<div className={classes.aboutMySelf}>
 					<ul>
-						<li>Onoprienko</li>
-				  		<li>Anton</li>
-				  		<li>25.01.1988</li>
-						<li>JavaScript Developer</li>
+						<div>{ props.profile.fullName}</div>
+						<li>{ props.profile.contacts.facebook}</li>
+				  		<li>{ props.profile.contacts.website}</li>
+				  		<li>{ props.profile.contacts.vk}</li>
+				  		<li>{ props.profile.contacts.twitter}</li>
+				  		<li>{ props.profile.contacts.instagram}</li>
+				  		<li>{ props.profile.contacts.youtube}</li>
+				  		<li>{ props.profile.contacts.github}</li>
+				  		<li>{ props.profile.contacts.mainLink}</li>
+				  		<li>{ props.profile.lookingForAJobDescription}</li>
+						<li>{props.profile.aboutMe}</li>
 					</ul>
 				</div>
 			</div>

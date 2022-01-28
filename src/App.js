@@ -1,5 +1,4 @@
 import "./App.css";
-import Profile from "./components/Profile/Profile.jsx";
 import Header from "./components/Header/Header";
 import Nav from "./components/Navbar/Navbar";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
@@ -9,6 +8,7 @@ import Music from "./components/music/Music";
 import Settings from "./components/Settings/Settings";
 import UsersContainer from "./components/Users/UsersContainer";
 import FriendsContainer from "./components/Friends/FriendsContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 function App(props) {
   return (
@@ -18,7 +18,7 @@ function App(props) {
       <div className="app-wrapper-content">
         <Routes>
           <Route path="/dialogs" element={<DialogsContainer />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<ProfileContainer />} />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />
           <Route path="/settings" element={<Settings />} />

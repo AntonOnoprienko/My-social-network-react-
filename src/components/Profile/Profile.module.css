@@ -24,3 +24,6 @@ ul {margin: 0 -20px;
 .posts{
 	background-color: slategrey;
 }
+li{
+	font-size: 15px;
+}
