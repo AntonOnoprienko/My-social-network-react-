@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { followAC, unfollowAC, setUsersAC, setCurrentPageAC, setTotalUsersCountAC, toogleIsFetchingAC } from '../../redux/usersReducer'
+import { follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toogleIsFetching } from '../../redux/usersReducer'
 import * as axios from 'axios'
 import Users from "./Users";
 import Preloader from '../Common/Preloader/Preloader';
@@ -56,31 +56,39 @@ let mapStateToProps = (state) => {
 	}
 }
 
-let mapDispatchToProps = (dispatch) => {
-	return {
-		follow: (userId) => {
-			dispatch(followAC(userId))
-		},
-		unfollow: (userId) => {
-			dispatch(unfollowAC(userId))
-		},
-		setUsers: (users) => {
-			dispatch(setUsersAC(users))
-		},
-		setCurrentPage: (pageNumber) => {
-			dispatch(setCurrentPageAC(pageNumber))
-		},
-		setTotalUsersCount: (totalCount) => {
-			dispatch(setTotalUsersCountAC(totalCount))
-		},
-		toogleIsFetching: (isFetching) => {
-			dispatch(toogleIsFetchingAC(isFetching))
-		}
-	};
-}
+
+
+
+
+export default connect(mapStateToProps, {
+	follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toogleIsFetching
+})(UsersComponent);
 
 
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersComponent);
+
+
+//let mapDispatchToProps = (dispatch) => {
+//	return {
+//		follow: (userId) => {
+//			dispatch(followAC(userId))
+//		},
+//		unfollow: (userId) => {
+//			dispatch(unfollowAC(userId))
+//		},
+//		setUsers: (users) => {
+//			dispatch(setUsersAC(users))
+//		},
+//		setCurrentPage: (pageNumber) => {
+//			dispatch(setCurrentPageAC(pageNumber))
+//		},
+//		setTotalUsersCount: (totalCount) => {
+//			dispatch(setTotalUsersCountAC(totalCount))
+//		},
+//		toogleIsFetching: (isFetching) => {
+//			dispatch(toogleIsFetchingAC(isFetching))
+//		}
+//	};
+//}
