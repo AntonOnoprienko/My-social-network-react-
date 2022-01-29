@@ -7,8 +7,22 @@
 	
 }
 .header img {
-	
-	padding-left: 25px;
+	margin-left: 25px;
 	width: 77px;
 
+}
+.loginBlock{
+	float: right;
+	padding: 8px 8px 0 0;
+}
+.loginBlock img{
+}
+.loginBlock a{
+	text-decoration: none;
+	color: white;
+}
+.loginAva{
+	border: solid 2px white;
+	border-radius: 50%;
+	margin-top: -5px;
 }
