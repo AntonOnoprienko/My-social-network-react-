@@ -2,11 +2,12 @@
 import classes from '../Profile.module.css'
 import Preloader from '../../Common/Preloader/Preloader'
 
-
-const ProfileInfo = (props) => {
+let ProfileInfo = (props) => {
+	
 	if (!props.profile) {
 		return <Preloader/>
 	}
+	
 	return (
 		<div>
 			<div>
