@@ -8,7 +8,8 @@ const Header = (props) => {
 		<header className={classes.header}>
 			<img src='https://pngimg.com/uploads/biohazard/biohazard_PNG59.png' />
 			<div className={classes.loginBlock}>
-				{props.isAuth ? <img className={classes.loginAva} src={login}/> : <NavLink to='/login'>Login<img src='https://cengage.force.com/resource/1607465003000/loginIcon'/></NavLink>}
+				{props.isAuth ? <img className={classes.loginAva} src={login} /> :
+					<NavLink to='/login'><img className={classes.defaultLogo} src='https://cengage.force.com/resource/1607465003000/loginIcon' /></NavLink>}
 				
 			</div>
 
