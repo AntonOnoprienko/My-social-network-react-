@@ -24,13 +24,19 @@ const Users = (props) => {
 								<NavLink to={'/profile/' +u.id}><img className={classes.avatar} src={u.photos.small != null ? u.photos.small : userPhoto } /></NavLink>
 						<div className={classes.buttonfollow}>
 									{u.followed
-										? <button onClick={() => {
+										? <button disabled={ props.followingProgress.some(id => id===u.id )} onClick={() => {
+											props.toogleIsFollowingProgress(true,u.id)
 											usersAPI.unfollowUser(u.id).then(data => {
-												if (data.resultCode === 0) { props.unfollow(u.id) }})
+												if (data.resultCode === 0) { props.unfollow(u.id) }
+											})
+											props.toogleIsFollowingProgress(false,u.id)
 										}} >Unfollow </button>
-										: <button onClick={() => {
+										: <button disabled={ props.followingProgress.some(id => id===u.id )} onClick={() => {
+											props.toogleIsFollowingProgress(true,u.id)
 											usersAPI.followUser(u.id).then(data => {
-												if (data.resultCode === 0) { props.follow(u.id) }})
+												if (data.resultCode === 0) { props.follow(u.id) }
+											})
+											props.toogleIsFollowingProgress(false,u.id)
 										}} >Follow </button>
 									}
 								</div>
