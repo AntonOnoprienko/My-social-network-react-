@@ -2,7 +2,7 @@ import React from "react"
 import classes from './Users.module.css'
 import userPhoto from '../../assets/images/Usericon.png'
 import { NavLink } from "react-router-dom"
-import * as axios from 'axios'
+import { usersAPI } from "../../api/api"
 
 const Users = (props) => {
 	let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
@@ -25,25 +25,15 @@ const Users = (props) => {
 						<div className={classes.buttonfollow}>
 									{u.followed
 										? <button onClick={() => {
-											axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-												withCredentials: true, headers: { 'API-KEY': 'cc1edbf0-ea6d-4193-9f6f-51094f2c5b73' }
-											}).then(response => {
-												if (response.data.resultCode === 0) { props.unfollow(u.id) }
-											})
+											usersAPI.unfollowUser(u.id).then(data => {
+												if (data.resultCode === 0) { props.unfollow(u.id) }})
 										}} >Unfollow </button>
 										: <button onClick={() => {
-											axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-												withCredentials: true, headers: { 'API-KEY': 'cc1edbf0-ea6d-4193-9f6f-51094f2c5b73'}
-											})
-												.then(response => {
-												
-													if (response.data.resultCode === 0) { props.follow(u.id) }
-											
-
-												})
+											usersAPI.followUser(u.id).then(data => {
+												if (data.resultCode === 0) { props.follow(u.id) }})
 										}} >Follow </button>
-					
-									}</div>
+									}
+								</div>
 					</div>
 					<div className={ classes.userinfo}>
 						<div className={ classes.fullname}>{u.name}</div>
