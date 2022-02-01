@@ -1,3 +1,5 @@
+import { usersAPI } from "../api/api";
+
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET_USERS";
@@ -10,7 +12,7 @@ let initialState = {
   users: [],
   pageSize: 100,
   totalUsersCount: 900,
-  currentPage: 2,
+  currentPage: 1,
   isFetching: true,
   followingInProgress: [],
 };
@@ -54,15 +56,15 @@ const usersReduсer = (state = initialState, action) => {
         ...state,
         followingInProgress: action.isFetching
           ? [...state.followingInProgress, action.userId]
-          : state.followingInProgress.filter((id) => (id = !action.userId)),
+          : state.followingInProgress.filter((id) => id != action.userId),
       };
     }
     default:
       return state;
   }
 };
-export const follow = (userId) => ({ type: FOLLOW, userId });
-export const unfollow = (userId) => ({ type: UNFOLLOW, userId });
+export const followSucess = (userId) => ({ type: FOLLOW, userId });
+export const unfollowSucess = (userId) => ({ type: UNFOLLOW, userId });
 export const setUsers = (users) => ({ type: SET_USERS, users });
 export const setCurrentPage = (currentPage) => ({
   type: SET_CURRENT_PAGE,
@@ -81,4 +83,38 @@ export const toogleIsFollowingProgress = (isFetching, userId) => ({
   isFetching,
   userId,
 });
+
+export const getUsers = (currentPage, pageSize) => {
+  return (dispatch) => {
+    dispatch(toogleIsFetching(true));
+    usersAPI.getUsers(currentPage, pageSize).then((data) => {
+      dispatch(setUsers(data.items));
+      //dispatch.setTotalUsersCount(data.totalCount)
+      dispatch(toogleIsFetching(false));
+    });
+  };
+};
+
+export const unfollow = (userId) => {
+  return (dispatch) => {
+    dispatch(toogleIsFollowingProgress(true, userId));
+    usersAPI.unfollowUser(userId).then((data) => {
+      dispatch(toogleIsFollowingProgress(false, userId));
+      if (data.resultCode === 0) {
+        dispatch(unfollowSucess(userId));
+      }
+    });
+  };
+};
+export const follow = (userId) => {
+  return (dispatch) => {
+    dispatch(toogleIsFollowingProgress(true, userId));
+    usersAPI.followUser(userId).then((data) => {
+      dispatch(toogleIsFollowingProgress(false, userId));
+      if (data.resultCode === 0) {
+        dispatch(followSucess(userId));
+      }
+    });
+  };
+};
 export default usersReduсer;

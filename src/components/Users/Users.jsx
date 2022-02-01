@@ -9,7 +9,8 @@ const Users = (props) => {
 		let pages = [];
 		for (let i = 1; i <= pagesCount; i++) {
 			pages.push(i)
-		};
+	};
+	
 	return ( <div>
 			<div className={ classes.pageNumbers}>
 				{pages.map(p => { 
@@ -24,19 +25,15 @@ const Users = (props) => {
 								<NavLink to={'/profile/' +u.id}><img className={classes.avatar} src={u.photos.small != null ? u.photos.small : userPhoto } /></NavLink>
 						<div className={classes.buttonfollow}>
 									{u.followed
-										? <button disabled={ props.followingProgress.some(id => id===u.id )} onClick={() => {
-											props.toogleIsFollowingProgress(true,u.id)
-											usersAPI.unfollowUser(u.id).then(data => {
-												if (data.resultCode === 0) { props.unfollow(u.id) }
-											})
-											props.toogleIsFollowingProgress(false,u.id)
+
+										? <button disabled={ props.followingInProgress.some(id => id === u.id )} onClick={() => {
+											props.unfollow(u.id);
+											
 										}} >Unfollow </button>
-										: <button disabled={ props.followingProgress.some(id => id===u.id )} onClick={() => {
-											props.toogleIsFollowingProgress(true,u.id)
-											usersAPI.followUser(u.id).then(data => {
-												if (data.resultCode === 0) { props.follow(u.id) }
-											})
-											props.toogleIsFollowingProgress(false,u.id)
+
+										: <button disabled={ props.followingInProgress.some(id => id === u.id )} onClick={() => {
+											props.follow(u.id)
+											
 										}} >Follow </button>
 									}
 								</div>
