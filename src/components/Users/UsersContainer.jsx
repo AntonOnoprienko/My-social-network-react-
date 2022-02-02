@@ -27,7 +27,6 @@ class UsersComponent extends React.Component {
 				users={this.props.users}
 				unfollow={this.props.unfollow}
 				follow={this.props.follow}
-				toogleIsFollowingProgress={this.props.toogleIsFollowingProgress}
 				followingInProgress={this.props.followingInProgress}
 			/>
 		</>
