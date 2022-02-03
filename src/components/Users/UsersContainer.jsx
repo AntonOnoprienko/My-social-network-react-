@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { followSucess, unfollowSucess, setCurrentPage, toogleIsFollowingProgress, getUsers,unfollow,follow} from '../../redux/usersReducer'
 import Users from "./Users";
 import Preloader from '../Common/Preloader/Preloader';
+import { withAuthNavigator } from '../../hoc/withAuthNavigator';
 
 
 class UsersComponent extends React.Component {
@@ -33,24 +34,22 @@ class UsersComponent extends React.Component {
 	};
 };
 
-let mapStateToProps = (state) => {
-	return {
-		users: state.usersPage.users,
-		pageSize:state.usersPage.pageSize,
-		totalUsersCount:state.usersPage.totalUsersCount,
-		currentPage: state.usersPage.currentPage,
-		isFetching: state.usersPage.isFetching,
-		followingInProgress: state.usersPage.followingInProgress,
-	}
-}
+let mapStateToProps = (state) => ({
+	users: state.usersPage.users,
+	pageSize: state.usersPage.pageSize,
+	totalUsersCount: state.usersPage.totalUsersCount,
+	currentPage: state.usersPage.currentPage,
+	isFetching: state.usersPage.isFetching,
+	followingInProgress: state.usersPage.followingInProgress,
+
+});
 
 
-
-
+let withAuthNavigatorUsersComponent = withAuthNavigator(UsersComponent);
 
 export default connect(mapStateToProps, {
 	followSucess, unfollowSucess, setCurrentPage,toogleIsFollowingProgress,getUsers,unfollow,follow
-})(UsersComponent);
+})(withAuthNavigatorUsersComponent);
 
 
 

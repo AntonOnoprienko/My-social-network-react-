@@ -21,7 +21,9 @@
 	color: white;
 }
 .loginAva{
-	border: solid 2px white;
+	border: solid 2px greenyellow;
+	box-shadow: greenyellow 1px 1px 10px;
+
 	border-radius: 50%;
 	margin-top: -5px;
 }

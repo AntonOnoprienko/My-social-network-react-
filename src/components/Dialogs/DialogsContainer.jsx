@@ -1,29 +1,19 @@
 import Dialogs from './Dialogs';
-import { addMessageActionCreator, updateNewMessageTextActionCreator} from '../../redux/chatPageReduсer';
-import { connect } from 'react-redux'
+import { sendMessage, updateNewMessageText} from '../../redux/chatPageReduсer';
+import { connect } from 'react-redux';
+import { withAuthNavigator } from '../../hoc/withAuthNavigator'
 
 
 
 
 
-let mapStateToProps = (state) => {
-	return {
-		chatPage: state.chatPage,
-		newMessageText: state.chatPage.newMessageText
-		
-	}
-};
+let mapStateToProps = (state) => ({
+	
+	chatPage: state.chatPage,
+	newMessageText: state.chatPage.newMessageText,
+});
+let NavigateWrapperComponent = withAuthNavigator(Dialogs);
 
-let mapDispatchToProps = (dispatch) => {
-	return {
-		sendMessage: () => {
-			dispatch(addMessageActionCreator())
-		},
-		updateNewMessageText: (text) => {
-			dispatch(updateNewMessageTextActionCreator(text))
-		}
-	}
-};
-const DialogsContainer = connect (mapStateToProps, mapDispatchToProps)(Dialogs)
+const DialogsContainer = connect(mapStateToProps, { sendMessage, updateNewMessageText })(NavigateWrapperComponent)
 
 export default DialogsContainer;
