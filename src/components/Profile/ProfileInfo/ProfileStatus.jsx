@@ -16,9 +16,7 @@ class ProfileStatus extends React.Component {
 				editMode: false,
 		})
 	};
-	updateStatusText = (e) => {
-	
-	}
+
 	render() {
 		return <>
 			{!this.state.editMode &&

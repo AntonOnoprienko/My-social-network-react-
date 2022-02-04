@@ -1,9 +1,8 @@
 import React from "react";
 import Profile from "./Profile";
 import { connect } from "react-redux";
-import { getProfile } from '../../redux/profilePageReduсer';
+import { getProfile , getUserStatus, updateUserStatus} from '../../redux/profilePageReduсer';
 import { useParams } from "react-router";
-import {withAuthNavigator} from '../../hoc/withAuthNavigator'
 import { compose } from "redux";
 
 const withRouter = WrappedComponent => props => {
@@ -22,20 +21,22 @@ class ProfileContainer extends React.Component {
 			userId = 2;
 		}
 		this.props.getProfile(userId);
+		this.props.getUserStatus(userId);
 	};
 	render() {
 		return (
-			<Profile {...this.props} profile={this.props.profile} />
+			<Profile {...this.props} profile={this.props.profile} status={this.props.status} updateUserStatus={ this.props.updateUserStatus}/>
 		)
 	}
 }
 let mapStateToProps = (state) => ({
 	profile: state.profilePage.profile,
+	status:state.profilePage.status,
 });
 
 
 export default compose(
-	connect(mapStateToProps, {getProfile}),
+	connect(mapStateToProps, {getProfile,getUserStatus,updateUserStatus}),
 	withRouter,
 	//withAuthNavigator (Перевод на страницу Логин если пользователь не авторизирован)
 )(ProfileContainer);

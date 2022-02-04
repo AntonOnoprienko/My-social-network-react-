@@ -27,8 +27,8 @@ class UsersComponent extends React.Component {
 				onPageChanged={this.onPageChanged}
 				currentPage={this.props.currentPage}
 				users={this.props.users}
-				unfollow={this.props.unfollow}
-				follow={this.props.follow}
+				unfollow={this.props.unfollowSucess}
+				follow={this.props.followSucess}
 				followingInProgress={this.props.followingInProgress}
 			/>
 		</>

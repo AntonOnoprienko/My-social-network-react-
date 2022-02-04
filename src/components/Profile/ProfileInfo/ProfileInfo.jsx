@@ -10,6 +10,7 @@ let ProfileInfo = (props) => {
 	}
 	
 	return (
+		
 		<div>
 			<div>
 				<img className={ classes.walpapper } src='https://static-sl.insales.ru/images/products/1/328/193446216/11-019_%D0%9D%D1%8C%D1%8E-%D0%99%D0%BE%D1%80%D0%BA_%D1%87%D0%B1.jpg' />
@@ -22,7 +23,7 @@ let ProfileInfo = (props) => {
 				<div className={classes.aboutMySelf}>
 					<ul>
 						<div>{props.profile.fullName}</div>
-						<li><ProfileStatus status='hello my friends'/></li>
+						<li><ProfileStatus status={props.status} updateUserStatus={ props.updateUserStatus}/></li>
 						<li>{ props.profile.contacts.facebook}</li>
 				  		<li>{ props.profile.contacts.website}</li>
 				  		<li>{ props.profile.contacts.vk}</li>
