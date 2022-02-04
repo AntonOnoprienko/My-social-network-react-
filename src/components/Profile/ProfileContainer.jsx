@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getProfile } from '../../redux/profilePageReduсer';
 import { useParams } from "react-router";
 import {withAuthNavigator} from '../../hoc/withAuthNavigator'
+import { compose } from "redux";
 
 const withRouter = WrappedComponent => props => {
     const params = useParams();
@@ -32,8 +33,10 @@ let mapStateToProps = (state) => ({
 	profile: state.profilePage.profile,
 });
 
-let NavigateWrapperComponent = withAuthNavigator(ProfileContainer);
 
-let WithUrlDataContainerComponent = withRouter(NavigateWrapperComponent);
-
-export default connect(mapStateToProps, {getProfile} ) (WithUrlDataContainerComponent);
+export default compose(
+	connect(mapStateToProps, {getProfile}),
+	withRouter,
+	//withAuthNavigator
+)
+	(ProfileContainer);

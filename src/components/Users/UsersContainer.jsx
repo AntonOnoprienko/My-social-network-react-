@@ -4,6 +4,7 @@ import { followSucess, unfollowSucess, setCurrentPage, toogleIsFollowingProgress
 import Users from "./Users";
 import Preloader from '../Common/Preloader/Preloader';
 import { withAuthNavigator } from '../../hoc/withAuthNavigator';
+import { compose } from 'redux';
 
 
 class UsersComponent extends React.Component {
@@ -45,13 +46,13 @@ let mapStateToProps = (state) => ({
 });
 
 
-let withAuthNavigatorUsersComponent = withAuthNavigator(UsersComponent);
-
-export default connect(mapStateToProps, {
-	followSucess, unfollowSucess, setCurrentPage,toogleIsFollowingProgress,getUsers,unfollow,follow
-})(withAuthNavigatorUsersComponent);
-
-
+export default compose(
+connect(mapStateToProps, {
+	followSucess, unfollowSucess, setCurrentPage,
+	toogleIsFollowingProgress, getUsers, unfollow, follow
+}),
+//withAuthNavigator
+)(UsersComponent)
 
 
 
