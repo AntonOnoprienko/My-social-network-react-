@@ -51,7 +51,7 @@ connect(mapStateToProps, {
 	followSucess, unfollowSucess, setCurrentPage,
 	toogleIsFollowingProgress, getUsers, unfollow, follow
 }),
-//withAuthNavigator
+//withAuthNavigator (Перевод на страницу Логин если пользователь не авторизирован)
 )(UsersComponent)
 
 

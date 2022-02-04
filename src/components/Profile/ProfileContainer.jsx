@@ -37,6 +37,5 @@ let mapStateToProps = (state) => ({
 export default compose(
 	connect(mapStateToProps, {getProfile}),
 	withRouter,
-	//withAuthNavigator
-)
-	(ProfileContainer);
+	//withAuthNavigator (Перевод на страницу Логин если пользователь не авторизирован)
+)(ProfileContainer);

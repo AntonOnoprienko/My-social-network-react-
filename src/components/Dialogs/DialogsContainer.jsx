@@ -11,5 +11,5 @@ let mapStateToProps = (state) => ({
 
 export default compose(
 	connect(mapStateToProps, { sendMessage, updateNewMessageText }),
-	//withAuthNavigator
+	//withAuthNavigator (Перевод на страницу Логин если пользователь не авторизирован)
 )(Dialogs);
