@@ -1,5 +1,4 @@
 import React from 'react';
-import { updateUserStatus } from '../../../redux/profilePageReduсer';
 import classes from '../Profile.module.css'
 
 class ProfileStatus extends React.Component {
@@ -7,11 +6,7 @@ class ProfileStatus extends React.Component {
 		editMode: false,
 		status: this.props.status
 	};
-	onChangeStatus = (e) => {
-		this.setState({
-			status: e.currentTarget.value
-		})	
-	};
+	
 	activateEditMode = () => {
 		this.setState({
 			editMode: true,
@@ -24,16 +19,27 @@ class ProfileStatus extends React.Component {
 		})
 		this.props.updateUserStatus(this.state.status);
 	};
-
+	componentDidUpdate(prevProps, prevState) {
+		if (prevProps.status !== this.props.status) {
+			this.setState({
+				status: this.props.status
+			});
+		};
+	};
+	onChangeStatus = (e) => {
+		this.setState({
+			status: e.currentTarget.value
+		})	
+	};
 	render() {
 		return <>
 			{!this.state.editMode &&
 				<div>
-				<span className={ classes.status }onDoubleClick={this.activateEditMode} >{this.props.status || 'status not found'}</span>
+				<span className={ classes.status }onDoubleClick={this.activateEditMode} >{this.state.status || 'status not found'}</span>
 				</div>}
 			{this.state.editMode &&
 				<div>
-				<input onChange={ this.onChangeStatus }autoFocus='true' onBlur={this.deactivateEditMode } value={this.state.status} />
+				<input onChange={ this.onChangeStatus } autoFocus={true} onBlur={this.deactivateEditMode } value={this.state.status} />
 				</div>}
 				</>
 	};

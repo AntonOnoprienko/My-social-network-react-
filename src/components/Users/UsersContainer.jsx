@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { followSucess, unfollowSucess, setCurrentPage, toogleIsFollowingProgress, getUsers,unfollow,follow} from '../../redux/usersReducer'
 import Users from "./Users";
 import Preloader from '../Common/Preloader/Preloader';
-import { withAuthNavigator } from '../../hoc/withAuthNavigator';
+
 import { compose } from 'redux';
 
 

@@ -108,11 +108,7 @@ const profileReduсer = (state = initialState, action) => {
         ...state,
         status: action.status,
       };
-    case GET_USER_STATUS:
-      return {
-        ...state,
-        status: action.status,
-      };
+
     case UPDATE_USER_STATUS:
       return {
         ...state,
