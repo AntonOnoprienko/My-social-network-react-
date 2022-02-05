@@ -22,8 +22,9 @@ let ProfileInfo = (props) => {
 				</div>
 				<div className={classes.aboutMySelf}>
 					<ul>
-						<div>{props.profile.fullName}</div>
-						<li><ProfileStatus status={props.status} updateUserStatus={ props.updateUserStatus}/></li>
+						<div className={ classes.fullName}> {props.profile.fullName}</div>
+						<ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus} />
+						<br />
 						<li>{ props.profile.contacts.facebook}</li>
 				  		<li>{ props.profile.contacts.website}</li>
 				  		<li>{ props.profile.contacts.vk}</li>

@@ -1,21 +1,17 @@
-
-
 .myInfo{
 
 display: flex;
 flex-direction: row;
 } 
+
 ul {margin: 0 -20px;
    list-style-type: none; 
-	font-size: 20px;
 }
 .walpapper {
 	height: 100px;
-	width: 670px;
-	
+	width: 670px;	
 } 
 .avatar {
-	
 	margin-left: 5px;
 	width: 179px;
 }
@@ -25,5 +21,15 @@ ul {margin: 0 -20px;
 	background-color: slategrey;
 }
 li{
-	font-size: 15px;
+	font-size: 17px;
+}
+.fullName {
+	font-size: 30px;
+	font-weight: bold;
+	
+}
+.status {
+	color:slateblue;
+	font-style: italic;
+	font-size: 20px;
 }

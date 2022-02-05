@@ -51,13 +51,22 @@
 	border: 2px white solid;
 	border-radius: 30px;
 }
-.messages textarea:focus {
 
-}
 
 .messages button {
-	width: 120px;
-	margin-left: 300px;
-	border-radius: 30px;
-	background-color: white;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px 0px 9px 290px;
+  padding: 8px 16px;
+  border-radius: 15px;
+  position: relative;
+  border: 1px solid black;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  transition: .4s;
+}
+.messages button:hover {
+	background-color: goldenrod;
+	color: white;
+	
 }
