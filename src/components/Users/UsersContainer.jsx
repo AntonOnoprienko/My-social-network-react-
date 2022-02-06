@@ -13,6 +13,7 @@ class UsersComponent extends React.Component {
 		this.props.getUsers(this.props.currentPage, this.props.pageSize)
 	};
 	onPageChanged = (pageNumber) => {
+		this.props.setCurrentPage(pageNumber)
 		this.props.getUsers(pageNumber, this.props.pageSize)
 	};
 	
@@ -53,30 +54,3 @@ connect(mapStateToProps, {
 }),
 //withAuthNavigator (Перевод на страницу Логин если пользователь не авторизирован)
 )(UsersComponent)
-
-
-
-
-
-//let mapDispatchToProps = (dispatch) => {
-//	return {
-//		follow: (userId) => {
-//			dispatch(followAC(userId))
-//		},
-//		unfollow: (userId) => {
-//			dispatch(unfollowAC(userId))
-//		},
-//		setUsers: (users) => {
-//			dispatch(setUsersAC(users))
-//		},
-//		setCurrentPage: (pageNumber) => {
-//			dispatch(setCurrentPageAC(pageNumber))
-//		},
-//		setTotalUsersCount: (totalCount) => {
-//			dispatch(setTotalUsersCountAC(totalCount))
-//		},
-//		toogleIsFetching: (isFetching) => {
-//			dispatch(toogleIsFetchingAC(isFetching))
-//		}
-//	};
-//}

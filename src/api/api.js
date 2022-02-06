@@ -34,7 +34,6 @@ export const profileAPI = {
     return instance.put(`/profile/status/`, { status: status });
   },
 };
-
 export const authAPI = {
   getAuth: () => {
     return instance.get(`auth/me`);
