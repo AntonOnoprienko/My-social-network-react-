@@ -1,7 +1,6 @@
 import Dialogs from './Dialogs';
-import { sendMessage, updateNewMessageText} from '../../redux/chatPageReduсer';
+import { sendMessage } from '../../redux/chatPageReduсer';
 import { connect } from 'react-redux';
-import { withAuthNavigator } from '../../hoc/withAuthNavigator'
 import { compose } from 'redux';
 
 let mapStateToProps = (state) => ({
@@ -9,7 +8,9 @@ let mapStateToProps = (state) => ({
 	newMessageText: state.chatPage.newMessageText,
 });
 
+
+
 export default compose(
-	connect(mapStateToProps, { sendMessage, updateNewMessageText }),
+	connect(mapStateToProps, {sendMessage}),
 	//withAuthNavigator (Перевод на страницу Логин если пользователь не авторизирован)
 )(Dialogs);

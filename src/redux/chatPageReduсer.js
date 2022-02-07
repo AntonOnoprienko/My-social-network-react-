@@ -1,5 +1,5 @@
 const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
+//const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 
 let initialState = {
   dialogsData: [
@@ -72,7 +72,6 @@ let initialState = {
       url: "http://risovach.ru/thumb/upload/200s400/2014/07/generator/vau_55876037_orig_.jpeg?5u8zq",
     },
   ],
-  newMessageText: "",
 };
 
 const chatReduсer = (state = initialState, action) => {
@@ -81,28 +80,35 @@ const chatReduсer = (state = initialState, action) => {
       let newMessage = {
         id: 0,
         name: "Anton Onoprienko",
-        message: state.newMessageText,
+        message: action.newMessageBody,
         url: "https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png",
       };
 
       return {
         ...state,
-        newMessageText: "",
         messagesData: [...state.messagesData, newMessage],
       };
-    case UPDATE_NEW_MESSAGE_TEXT:
-      return {
-        ...state,
-        newMessageText: action.newText,
-      };
+    // case UPDATE_NEW_MESSAGE_TEXT:
+    //   return {
+    //     ...state,
+    //     newMessageText: action.newText,
+    //   };
 
     default:
       return state;
   }
 };
-export const sendMessage = () => ({ type: ADD_MESSAGE });
-export const updateNewMessageText = (text) => ({
-  type: UPDATE_NEW_MESSAGE_TEXT,
-  newText: text,
+export const messageSend = (newMessageBody) => ({
+  type: ADD_MESSAGE,
+  newMessageBody,
 });
+//export const updateNewMessageText = (text) => ({
+//  type: UPDATE_NEW_MESSAGE_TEXT,
+//  newText: text,
+//});
+
+export const sendMessage = (newMessageBody) => {
+  return (dispatch) => dispatch(messageSend(newMessageBody));
+};
+
 export default chatReduсer;

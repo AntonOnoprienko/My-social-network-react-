@@ -1,7 +1,7 @@
 import { profileAPI } from "../api/api";
 
 const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+//const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 const GET_USER_STATUS = "GET_USER_STATUS";
 const UPDATE_USER_STATUS = "UPDATE_USER_STATUS";
@@ -72,7 +72,6 @@ let initialState = {
       likeCount: 441,
     },
   ],
-  newPostText: "",
   profile: null,
   status: "",
 };
@@ -83,21 +82,20 @@ const profileReduсer = (state = initialState, action) => {
       let newPost = {
         id: 9,
         name: "Anton Onoprienko",
-        message: state.newPostText,
+        message: action.newPostText,
         url: "https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png",
         likesCount: 0,
       };
       return {
         ...state,
         postsData: [newPost, ...state.postsData],
-        newPostText: "",
       };
 
-    case UPDATE_NEW_POST_TEXT:
-      return {
-        ...state,
-        newPostText: action.newText,
-      };
+    // case UPDATE_NEW_POST_TEXT:
+    //   return {
+    //     ...state,
+    //     newPostText: action.newText,
+    //   };
     case SET_USER_PROFILE:
       return {
         ...state,
@@ -118,11 +116,11 @@ const profileReduсer = (state = initialState, action) => {
       return state;
   }
 };
-export const addPost = () => ({ type: ADD_POST });
-export const updateNewPostText = (text) => ({
-  type: UPDATE_NEW_POST_TEXT,
-  newText: text,
-});
+export const addPost = (newPostText) => ({ type: ADD_POST, newPostText });
+//export const updateNewPostText = (text) => ({
+//  type: UPDATE_NEW_POST_TEXT,
+//  newText: text,
+//});
 export const setUserProfile = (profile) => ({
   type: SET_USER_PROFILE,
   profile,
