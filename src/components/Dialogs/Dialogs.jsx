@@ -3,7 +3,10 @@ import classes from './Dialogs.module.css'
 import Message from './Message/Message';
 import React from 'react';
 import { Field,reduxForm } from 'redux-form';
+import { maxLenghtCreator, required } from '../utils/validators/validators';
+import { Textarea } from '../Common/FormsControls/FormsControls';
 
+let maxLenth40 = maxLenghtCreator(40);
 
 const Dialogs = (props) => {
 	let dialogsElements = props.chatPage.dialogsData.map(d => <DialogItem key={d.id} id= {d.id} name= {d.name} url= { d.url } />)
@@ -31,7 +34,7 @@ const Dialogs = (props) => {
 const MessagesForm = (props) => {
 	return <form onSubmit={props.handleSubmit}>
 		<div>
-			<Field component='textarea' placeholder='Enter your message' name='newMessageBody'  />
+			<Field validate={[required,maxLenth40]}component={Textarea} placeholder='Enter your message' name='newMessageBody'  />
 			<button >send message </button>
 			</div>
 	</form>
