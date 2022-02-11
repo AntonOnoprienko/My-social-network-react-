@@ -1,9 +1,19 @@
 
 .FormControls.error textarea {
-	border: 1px solid red
+	border: 1px solid red;
 }
 .FormControls.error span {
 	margin-left: 10px;
 	color: red;
 }
 
+.formSummaryError {
+	color: white;
+	padding: 5px;
+	background-color: red;
+	text-align: center;
+	width: 200px;
+	font-weight: bold;
+	border: 1px solid black;
+	
+}

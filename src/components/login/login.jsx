@@ -16,7 +16,7 @@ const Login = (props) => {
 	};
 
 	return <div>
-		<h1>LOGIN for testing: onoprienkoanton88@gmail.com</h1>
+		<h1>LOGIN for testing: onoprienkoanton88@gmail.com pass: 111111</h1>
 		<LoginReduxForm onSubmit={ onSubmit }/>
   </div>;
 };
