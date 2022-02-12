@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getProfile , getUserStatus, updateUserStatus} from '../../redux/profilePageReduсer';
 import { useParams } from "react-router";
 import { compose } from "redux";
+import {withAuthNavigator} from './../../hoc/withAuthNavigator'
 
 const withRouter = WrappedComponent => props => {
     const params = useParams();
@@ -38,7 +39,8 @@ let mapStateToProps = (state) => ({
 
 
 export default compose(
+	withAuthNavigator,
 	connect(mapStateToProps, {getProfile,getUserStatus,updateUserStatus}),
 	withRouter,
-	//withAuthNavigator (Перевод на страницу Логин если пользователь не авторизирован)
+	
 )(ProfileContainer);
