@@ -18,10 +18,7 @@ const MyPosts = (props) => {
 		props.addPost(value.newPostMessage);
 	}
 
-	//let onPostChange = (e) => {
-	//	let text = e.target.value;
-	//	props.updateNewPostText(text)
-	//}
+	
 	return (
 		<div className={classes.content}>
 			<div className={classes.posts}>
