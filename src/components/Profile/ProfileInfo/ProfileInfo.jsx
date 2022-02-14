@@ -1,7 +1,7 @@
 
 import classes from '../Profile.module.css';
 import Preloader from '../../Common/Preloader/Preloader';
-import ProfileStatus from './ProfileStatus';
+import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
 let ProfileInfo = (props) => {
 	
@@ -23,7 +23,7 @@ let ProfileInfo = (props) => {
 				<div className={classes.aboutMySelf}>
 					<ul>
 						<div className={ classes.fullName}> {props.profile.fullName}</div>
-						<ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus} />
+						<ProfileStatusWithHooks status={props.status} updateUserStatus={props.updateUserStatus} />
 						<br />
 						<li>{ props.profile.contacts.facebook}</li>
 				  		<li>{ props.profile.contacts.website}</li>
