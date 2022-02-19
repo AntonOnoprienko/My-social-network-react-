@@ -14,6 +14,7 @@ const MyPosts = React.memo(props => {
 	
 	let addPostText = (value) => {
 		props.addPost(value.newPostMessage);
+		value.newPostMessage = null;
 	}
 
 	return (

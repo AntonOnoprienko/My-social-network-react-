@@ -5,6 +5,7 @@ const ADD_POST = "ADD-POST";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 const GET_USER_STATUS = "GET_USER_STATUS";
 const UPDATE_USER_STATUS = "UPDATE_USER_STATUS";
+const DELETE_POST = "DELETE_POST";
 
 let initialState = {
   postsData: [
@@ -84,7 +85,7 @@ const profileReduсer = (state = initialState, action) => {
         name: "Anton Onoprienko",
         message: action.newPostText,
         url: "https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png",
-        likesCount: 0,
+        likeCount: 0,
       };
       return {
         ...state,
@@ -112,6 +113,12 @@ const profileReduсer = (state = initialState, action) => {
         ...state,
         status: action.status,
       };
+
+    case DELETE_POST:
+      return {
+        ...state,
+        postsData: state.postsData.filter((p) => p.id != action.postId),
+      };
     default:
       return state;
   }
@@ -129,6 +136,11 @@ export const getStatus = (status) => ({
 export const updateStatus = (status) => ({
   type: UPDATE_USER_STATUS,
   status,
+});
+
+export const deletePost = (postId) => ({
+  type: DELETE_POST,
+  postId,
 });
 
 export const getProfile = (userId) => {

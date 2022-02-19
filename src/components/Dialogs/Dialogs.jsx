@@ -13,7 +13,8 @@ const Dialogs = (props) => {
 	let messagesElements = props.chatPage.messagesData.map(m => <Message key={m.id} message={  m.message} url={ m.url }/> )
 
 	let addSubmit = (values) => {
-		props.sendMessage(values.newMessageBody)
+		props.sendMessage(values.newMessageBody);
+		values.newMessageBody = null;
 	}
 	return (
 
