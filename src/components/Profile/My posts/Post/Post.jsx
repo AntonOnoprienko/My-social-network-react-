@@ -7,7 +7,7 @@ const Post = (props) => {
 			<div>
 			 { props.name }
 			</div>
-			<img src={ props.src }/>
+			<img alt='not found' src={ props.src }/>
 			{ props.message }
 			
 			<div>

@@ -1,6 +1,6 @@
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { maxLenghtCreator, required } from '../../utils/validators/validators';
 import { Textarea } from '../../Common/FormsControls/FormsControls';

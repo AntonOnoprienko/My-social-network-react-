@@ -4,7 +4,7 @@ import classes from '../Dialogs.module.css'
 const DialogItem = (props) => {
 	return (
 <div className = { classes.dialog }>
-			<NavLink to={`/dialogs/${props.id}`}><img src={ props. url }/>{ props.name }</NavLink>
+			<NavLink to={`/dialogs/${props.id}`}><img alt='not found' src={ props.url }/>{ props.name }</NavLink>
 				</div>
 	)
 }

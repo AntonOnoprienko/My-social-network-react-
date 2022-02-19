@@ -13,12 +13,12 @@ let ProfileInfo = (props) => {
 		
 		<div>
 			<div>
-				<img className={ classes.walpapper } src='https://static-sl.insales.ru/images/products/1/328/193446216/11-019_%D0%9D%D1%8C%D1%8E-%D0%99%D0%BE%D1%80%D0%BA_%D1%87%D0%B1.jpg' />
+				<img className={ classes.walpapper } alt='not found' src='https://static-sl.insales.ru/images/products/1/328/193446216/11-019_%D0%9D%D1%8C%D1%8E-%D0%99%D0%BE%D1%80%D0%BA_%D1%87%D0%B1.jpg' />
 			</div>
 			
 			<div className={ classes.myInfo }>
 				<div>
-					<img className={classes.avatar} src={ props.profile.photos.large}/>
+					{<img className={classes.avatar} alt='not found' src={props.profile.photos.large != null ? props.profile.photos.large : 'https://pixy.org/src/9/93394.png' } /> }
 				</div>
 				<div className={classes.aboutMySelf}>
 					<ul>

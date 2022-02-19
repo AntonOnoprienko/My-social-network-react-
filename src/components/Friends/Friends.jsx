@@ -11,7 +11,7 @@ class Friends extends React.Component {
 					return <div key={f.id}>
 						<div className={classes.wrapper}>
 							<div className={classes.sidebar}>
-								<img className={classes.avatar} src={f.url} />
+								<img alt='not found' className={classes.avatar} src={f.url} />
 
 								<div className={classes.buttonfollow}>
 									{f.followed

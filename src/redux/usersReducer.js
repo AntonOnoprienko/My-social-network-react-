@@ -56,7 +56,7 @@ const usersReduсer = (state = initialState, action) => {
         ...state,
         followingInProgress: action.isFetching
           ? [...state.followingInProgress, action.userId]
-          : state.followingInProgress.filter((id) => id != action.userId),
+          : state.followingInProgress.filter((id) => id !== action.userId),
       };
     }
     default:
@@ -84,37 +84,28 @@ export const toogleIsFollowingProgress = (isFetching, userId) => ({
   userId,
 });
 
-export const getUsers = (currentPage, pageSize) => {
-  return (dispatch) => {
-    dispatch(toogleIsFetching(true));
-    usersAPI.getUsers(currentPage, pageSize).then((data) => {
-      dispatch(setUsers(data.items));
-      //dispatch.setTotalUsersCount(data.totalCount)
-      dispatch(toogleIsFetching(false));
-    });
-  };
+export const getUsers = (currentPage, pageSize) => async (dispatch) => {
+  dispatch(toogleIsFetching(true));
+  let response = await usersAPI.getUsers(currentPage, pageSize);
+  dispatch(setUsers(response.items));
+  //dispatch.setTotalUsersCount(data.totalCount)
+  dispatch(toogleIsFetching(false));
 };
 
-export const unfollow = (userId) => {
-  return (dispatch) => {
-    dispatch(toogleIsFollowingProgress(true, userId));
-    usersAPI.unfollowUser(userId).then((response) => {
-      dispatch(toogleIsFollowingProgress(false, userId));
-      if (response.data.resultCode === 0) {
-        dispatch(unfollowSucess(userId));
-      }
-    });
-  };
+export const unfollow = (userId) => async (dispatch) => {
+  dispatch(toogleIsFollowingProgress(true, userId));
+  let response = await usersAPI.unfollowUser(userId);
+  dispatch(toogleIsFollowingProgress(false, userId));
+  if (response.data.resultCode === 0) {
+    dispatch(unfollowSucess(userId));
+  }
 };
-export const follow = (userId) => {
-  return (dispatch) => {
-    dispatch(toogleIsFollowingProgress(true, userId));
-    usersAPI.followUser(userId).then((response) => {
-      dispatch(toogleIsFollowingProgress(false, userId));
-      if (response.data.resultCode === 0) {
-        dispatch(followSucess(userId));
-      }
-    });
-  };
+export const follow = (userId) => async (dispatch) => {
+  dispatch(toogleIsFollowingProgress(true, userId));
+  let response = await usersAPI.followUser(userId);
+  dispatch(toogleIsFollowingProgress(false, userId));
+  if (response.data.resultCode === 0) {
+    dispatch(followSucess(userId));
+  }
 };
 export default usersReduсer;

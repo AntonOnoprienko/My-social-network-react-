@@ -117,7 +117,7 @@ const profileReduсer = (state = initialState, action) => {
     case DELETE_POST:
       return {
         ...state,
-        postsData: state.postsData.filter((p) => p.id != action.postId),
+        postsData: state.postsData.filter((p) => p.id !== action.postId),
       };
     default:
       return state;

@@ -12,13 +12,13 @@ const Users = (props) => {
 	
 	return ( <div>
 			<div className={ classes.pageNumbers}>
-				{pages.map(p => { 
+				{pages.map((p) => { 
 					
-					return  <span onClick={(e) => {props.onPageChanged(p)} } className={ props.currentPage  === p && classes.selectedPage }>{p}</span>
+					return <span key={p.pages} onClick={() => {props.onPageChanged(p)} } className={ props.currentPage  === p && classes.selectedPage }>{p}</span>
 				}) }
 				</div>
-			{
-					props.users.map((u) => <div key={u.id}>
+		{
+			props.users.map((u) => <div key={u.users} >
 				<div className={ classes.wrapper}>
 							<div className={classes.sidebar}>
 								<NavLink to={'/profile/' + u.id}><img className={classes.avatar} src={u.photos.small != null ? u.photos.small : userPhoto} alt={'Sorry!' }/></NavLink>
