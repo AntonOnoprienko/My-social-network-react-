@@ -1,7 +1,6 @@
 import { profileAPI } from "../api/api";
 
 const ADD_POST = "ADD-POST";
-//const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 const GET_USER_STATUS = "GET_USER_STATUS";
 const UPDATE_USER_STATUS = "UPDATE_USER_STATUS";
@@ -143,29 +142,21 @@ export const deletePost = (postId) => ({
   postId,
 });
 
-export const getProfile = (userId) => {
-  return (dispatch) => {
-    profileAPI.getProfile(userId).then((response) => {
-      dispatch(setUserProfile(response.data));
-    });
-  };
+export const getProfile = (userId) => async (dispatch) => {
+  let response = await profileAPI.getProfile(userId);
+  dispatch(setUserProfile(response.data));
 };
 
-export const getUserStatus = (userId) => {
-  return (dispatch) => {
-    profileAPI.getStatus(userId).then((response) => {
-      dispatch(getStatus(response.data));
-    });
-  };
+export const getUserStatus = (userId) => async (dispatch) => {
+  let response = await profileAPI.getStatus(userId);
+  dispatch(getStatus(response.data));
 };
-export const updateUserStatus = (status) => {
-  return (dispatch) => {
-    profileAPI.updateStatus(status).then((response) => {
-      if (response.data.result === 0) {
-        dispatch(getStatus(status));
-      }
-    });
-  };
+
+export const updateUserStatus = (status) => async (dispatch) => {
+  let response = await profileAPI.updateStatus(status);
+  if (response.data.result === 0) {
+    dispatch(getStatus(status));
+  }
 };
 
 export default profileReduсer;
