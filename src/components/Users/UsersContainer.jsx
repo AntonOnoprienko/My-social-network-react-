@@ -12,11 +12,13 @@ import { compose } from 'redux';
 class UsersComponent extends React.Component {
 
 	componentDidMount() {
-		this.props.getUsers(this.props.currentPage, this.props.pageSize)
+		const { currentPage, pageSize ,getUsers} = this.props;
+		getUsers(currentPage,pageSize)
 	};
 	onPageChanged = (pageNumber) => {
-		this.props.setCurrentPage(pageNumber)
-		this.props.getUsers(pageNumber, this.props.pageSize)
+		const {setCurrentPage,getUsers,pageSize} = this.props
+		setCurrentPage(pageNumber)
+		getUsers(pageNumber,pageSize)
 	};
 	
 	render() {
@@ -33,8 +35,9 @@ class UsersComponent extends React.Component {
 				unfollow={this.props.unfollow}
 				follow={this.props.follow}
 				followingInProgress={this.props.followingInProgress}
-			/>
-		</>
+				/>
+				
+			</>
 	};
 };
 

@@ -1,0 +1,12 @@
+
+.pageNumbers{
+	margin: 0 5px;
+	letter-spacing: 5px;
+	cursor: pointer
+}
+.selectedPage {
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	
+}

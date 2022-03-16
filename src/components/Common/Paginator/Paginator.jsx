@@ -1,5 +1,5 @@
 import React from "react"
-import classes from './Users.module.css'
+import classes from './paginator.module.css'
 
 
 const Paginator = (props) => {
