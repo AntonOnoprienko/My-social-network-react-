@@ -83,7 +83,7 @@ const profileReduсer = (state = initialState, action) => {
         id: 9,
         name: "Anton Onoprienko",
         message: action.newPostText,
-        url: "https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/COA_of_Kharkiv_Oblast.svg/1200px-COA_of_Kharkiv_Oblast.svg.png",
         likeCount: 0,
       };
       return {
@@ -91,11 +91,6 @@ const profileReduсer = (state = initialState, action) => {
         postsData: [newPost, ...state.postsData],
       };
 
-    // case UPDATE_NEW_POST_TEXT:
-    //   return {
-    //     ...state,
-    //     newPostText: action.newText,
-    //   };
     case SET_USER_PROFILE:
       return {
         ...state,

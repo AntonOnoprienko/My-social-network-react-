@@ -21,7 +21,7 @@ let initialState = {
     {
       id: 4,
       name: "Swetlana  Lubaya",
-      url: "https://f1.upet.com/A_r2u6uZhnxA_x.jpg",
+      url: "https://upload.wikimedia.org/wikipedia/commons/5/52/Kharkov_gerb_1970th.gif",
     },
     {
       id: 5,
@@ -54,7 +54,7 @@ let initialState = {
     {
       id: 3,
       message: "Hi, i am fine",
-      url: "https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png",
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/COA_of_Kharkiv_Oblast.svg/1200px-COA_of_Kharkiv_Oblast.svg.png",
     },
     {
       id: 4,
@@ -64,7 +64,7 @@ let initialState = {
     {
       id: 5,
       message: "I want to go for a walk",
-      url: "https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png",
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/COA_of_Kharkiv_Oblast.svg/1200px-COA_of_Kharkiv_Oblast.svg.png",
     },
     {
       id: 6,
@@ -81,7 +81,7 @@ const chatReduсer = (state = initialState, action) => {
         id: 0,
         name: "Anton Onoprienko",
         message: action.newMessageBody,
-        url: "https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/COA_of_Kharkiv_Oblast.svg/1200px-COA_of_Kharkiv_Oblast.svg.png",
       };
 
       return {

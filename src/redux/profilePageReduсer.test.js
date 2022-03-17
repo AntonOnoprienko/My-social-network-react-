@@ -91,7 +91,7 @@ it("url must be correct", () => {
   let action = addPost();
   let newState = profileReduсer(state, action);
   expect(newState.postsData[0].url).toBe(
-    "https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png"
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/COA_of_Kharkiv_Oblast.svg/1200px-COA_of_Kharkiv_Oblast.svg.png"
   );
 });
 
