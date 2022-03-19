@@ -12,10 +12,11 @@ const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE_IS_FOLLOWING_PROGRESS";
 let initialState = {
   users: [],
   pageSize: 100,
-  totalUsersCount: 900,
+  totalUsersCount: 0,
   currentPage: 1,
   isFetching: true,
   followingInProgress: [],
+  portionSize: 10,
 };
 
 const usersReduсer = (state = initialState, action) => {
@@ -83,7 +84,7 @@ export const getUsers = (currentPage, pageSize) => async (dispatch) => {
   dispatch(toogleIsFetching(true));
   let response = await usersAPI.getUsers(currentPage, pageSize);
   dispatch(setUsers(response.items));
-  //dispatch.setTotalUsersCount(data.totalCount)
+  dispatch(setTotalUsersCount(response.totalCount));
   dispatch(toogleIsFetching(false));
 };
 

@@ -1,12 +1,32 @@
-
-.pageNumbers{
-	margin: 0 5px;
-	letter-spacing: 5px;
-	cursor: pointer
+.paginator {
+    margin: 10px;
 }
-.selectedPage {
-	font-weight: bold;
-	font-size: 20px;
+.pageNumber {
+    padding: 2px;
+	 cursor: pointer;
+}
+.pageNumber:hover{
 	color: white;
-	
+}
+
+.pageNumber.selectedPage {
+    font-weight: bold;
+    border-color: black;
+} 
+.button{
+	background-color: gray;
+	border-radius: 15px;
+	color: goldenrod;
+	margin: 0 5px;
+	text-decoration: none;
+   display: inline-block;
+   position: relative;
+   font-family: 'Montserrat', sans-serif;
+   transition: .4s;
+	cursor: pointer;
+}
+.button:hover {
+	background-color: grey;
+	color: white;
+	box-shadow: white 3px 3px 3px;
 }

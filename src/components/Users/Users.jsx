@@ -6,7 +6,7 @@ const Users = ({user,followingInProgress,unfollow,follow,...props}) => {
 	
 	
 	return <div>
-		<Paginator totalUsersCount={props.totalUsersCount} pageSize={props.pageSize} onPageChanged={props.onPageChanged} pageNumbers={props.pageNumbers}/>
+		<Paginator totalItemsCount={props.totalItemsCount} pageSize={props.pageSize} onPageChanged={props.onPageChanged} pageNumbers={props.pageNumbers} portionSize={props.portionSize }/>
 		{props.users.map((u) => <User key={u.users} user={u} followingInProgress={followingInProgress} unfollow={ unfollow } follow={ follow }/>)}
 		</div>
 };

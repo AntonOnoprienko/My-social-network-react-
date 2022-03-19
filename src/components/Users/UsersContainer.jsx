@@ -4,7 +4,7 @@ import { followSucess, unfollowSucess, setCurrentPage, toogleIsFollowingProgress
 import Users from "./Users";
 import Preloader from '../Common/Preloader/Preloader';
 import { withAuthNavigator } from '../../hoc/withAuthNavigator';
-import { getUsersSelector,getPageSize,getTotalUsersCount, getCurrentPage, getIsFetching, getFollowingInProgress } from '../../redux/usersSelectors'
+import { getUsersSelector,getPageSize,getTotalUsersCount, getCurrentPage, getIsFetching, getFollowingInProgress,getPortionSize} from '../../redux/usersSelectors'
 
 import { compose } from 'redux';
 
@@ -26,7 +26,7 @@ class UsersComponent extends React.Component {
 		return <>
 		{ this.props.isFetching ? <Preloader /> : null }
 			<Users
-				totalUsersCount={this.props.totalUsersCount}
+				totalItemsCount={this.props.totalItemsCount}
 				pageSize={this.props.pageSize}
 				pages={this.props.pages}
 				onPageChanged={this.onPageChanged}
@@ -35,6 +35,7 @@ class UsersComponent extends React.Component {
 				unfollow={this.props.unfollow}
 				follow={this.props.follow}
 				followingInProgress={this.props.followingInProgress}
+				portionSize={this.props.portionSize}
 				/>
 				
 			</>
@@ -44,10 +45,11 @@ class UsersComponent extends React.Component {
 let mapStateToProps = (state) => ({
 	users: getUsersSelector(state),
 	pageSize: getPageSize(state),
-	totalUsersCount: getTotalUsersCount(state),
+	totalItemsCount: getTotalUsersCount(state),
 	currentPage: getCurrentPage(state),
 	isFetching: getIsFetching(state),
 	followingInProgress: getFollowingInProgress(state),
+	portionSize: getPortionSize(state),
 
 });
 
