@@ -7,7 +7,7 @@ import FriendsContainer from "./components/Friends/FriendsContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginPage from "./components/Login/Login";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, HashRouter } from "react-router-dom";
 import { initializeApp } from "./redux/appReducer";
 import { connect, Provider } from "react-redux";
 import Preloader from "./components/Common/Preloader/Preloader";
@@ -62,11 +62,11 @@ let AppContainer = connect(mapStateToProps, { initializeApp })(App);
 
 const SamuraiJSApp = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Provider store={store}>
         <AppContainer />
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
