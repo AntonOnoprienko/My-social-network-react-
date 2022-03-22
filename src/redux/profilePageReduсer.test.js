@@ -106,3 +106,4 @@ it("after deleting length posts shouldn't be decrement if id is't correct", () =
   let newState = profileReduсer(state, action);
   expect(newState.postsData.length).toBe(9);
 });
+

@@ -34,3 +34,10 @@ li{
 	font-style: italic;
 	font-size: 20px;
 }
+
+.avatarWrapper{
+	max-width: 300px;
+}
+.fileInput{
+	margin-left: 34px;
+}
