@@ -3,7 +3,7 @@ import classes from '../Profile.module.css';
 import Preloader from '../../Common/Preloader/Preloader';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
-let ProfileInfo = (props) => {
+let ProfileInfo = (profile,...props) => {
 
 	const onMainPhotoSelected = (e) => {
 		if (e.target.files.length) {
@@ -29,27 +29,59 @@ let ProfileInfo = (props) => {
 					<span className={classes.fileInput}>{props.isOwner && <input type={"file"} onChange={onMainPhotoSelected} />}</span>
 				</div>
 				<div className={classes.aboutMySelf}>
-					<ul>
+
+					<div>
+						<div>
+							<b>Full name:</b> <span className={ classes.fullName}>{props.profile.fullName} </span>
+						</div>
+						<div>
+							<b>status:</b> <ProfileStatusWithHooks status={props.status} updateUserStatus={props.updateUserStatus} />
+						</div>
+						<div>
+							<b>Looking for a job:</b> {profile.lookingForAJob ? 'yes' : 'no'}
+						</div>
+						{props.profile.lookingForAJob &&
+							<div>
+								<b>My professional skills:</b> {profile.lookingForAJobDescription}
+							</div>
+						}
+						<div>
+							<b>About Me:</b> { profile.aboutMe}
+						</div>
+						<div>
+							<b>Contacts:</b> {Object.keys(profile.contacts).map(key => { return <Contact keyy={key} contactTitle={key} contactValue={profile.contacts[key]}/> } )}
+						</div>
+					</div>
+					
+
+
+
+
+
+
+					{/*<ul>
 						<div className={ classes.fullName}> {props.profile.fullName}</div>
 						<ProfileStatusWithHooks status={props.status} updateUserStatus={props.updateUserStatus} />
 						<br />
-						<li>{ props.profile.contacts.facebook}</li>
-				  		<li>{ props.profile.contacts.website}</li>
-				  		<li>{ props.profile.contacts.vk}</li>
-				  		<li>{ props.profile.contacts.twitter}</li>
-				  		<li>{ props.profile.contacts.instagram}</li>
-				  		<li>{ props.profile.contacts.youtube}</li>
-				  		<li>{ props.profile.contacts.github}</li>
-				  		<li>{ props.profile.contacts.mainLink}</li>
-				  		<li>{ props.profile.lookingForAJobDescription}</li>
-						<li>{props.profile.aboutMe}</li>
-					</ul>
+						<li>{ contacts.facebook}</li>
+				  		<li>{ contacts.website}</li>
+				  		<li>{ contacts.vk}</li>
+				  		<li>{ contacts.twitter}</li>
+				  		<li>{ contacts.instagram}</li>
+				  		<li>{ contacts.youtube}</li>
+				  		<li>{ contacts.github}</li>
+				  		<li>{ contacts.mainLink}</li>
+				  		<li>{ contacts.lookingForAJobDescription}</li>
+						<li>{ contacts.aboutMe}</li>
+					</ul>*/}
 				</div>
 			</div>
 			</div>
 	)
 }
 
-
+const Contact = ({contactTitle,contactValue }) => {
+	return <div><b>{contactTitle}:</b>{contactValue}</div>
+} 
 
 export default ProfileInfo;

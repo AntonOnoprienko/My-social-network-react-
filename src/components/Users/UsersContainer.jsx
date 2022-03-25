@@ -26,6 +26,7 @@ class UsersComponent extends React.Component {
 		return <>
 		{ this.props.isFetching ? <Preloader /> : null }
 			<Users
+				
 				totalItemsCount={this.props.totalItemsCount}
 				pageSize={this.props.pageSize}
 				pages={this.props.pages}
