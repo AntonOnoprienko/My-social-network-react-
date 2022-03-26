@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import classes from '../Profile.module.css'
 
-const ProfileStatusWithHooks = (props) => {
+const ProfileStatusWithHooks = ({status,updateUserStatus}) => {
 	
 	let [editMode, setEditMode] = useState(false);
-	let [status, setStatus] = useState(props.status);
+	let [statusLocal, setStatus] = useState(status);
 
 	useEffect(() => {
-		setStatus(props.status);
-	}, [props.status]);
+		setStatus(status);
+	}, [status]);
 	
 	const activateEditMode = () => {
 		setEditMode(true);
 	};
 	const deActivateEditMode = () => {
 		setEditMode(false);
-		props.updateUserStatus(status);
+		updateUserStatus(statusLocal);
 	};
 
 	const onStatusChange = (e) => {
@@ -25,11 +25,11 @@ const ProfileStatusWithHooks = (props) => {
 		return <>
 			{! editMode &&
 				<div>
-				<span onDoubleClick={activateEditMode} className={classes.status}>{props.status}</span>
+				<span onDoubleClick={activateEditMode} className={classes.status}>{status}</span>
 				</div>}
 			{editMode &&
 				<div>
-				<input onChange={ onStatusChange } onBlur={deActivateEditMode} value={ status} autoFocus={true} />
+				<input onChange={ onStatusChange } onBlur={deActivateEditMode} value={statusLocal} autoFocus={true} />
 				</div>}
 				</>
 };
