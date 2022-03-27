@@ -1,7 +1,7 @@
 import React from "react";
 import Profile from "./Profile";
 import { connect } from "react-redux";
-import { getProfile , getUserStatus, updateUserStatus, savePhoto} from '../../redux/profilePageReduсer';
+import { getProfile , getUserStatus, updateUserStatus, savePhoto,saveProfile} from '../../redux/profilePageReduсer';
 import { useParams } from "react-router";
 import { compose } from "redux";
 import {withAuthNavigator} from './../../hoc/withAuthNavigator'
@@ -34,7 +34,7 @@ componentDidUpdate() {
 	};
 	render() {
 		return (
-			<Profile savePhoto={this.props.savePhoto} isOwner={!this.props.params.userId} {...this.props} profile={this.props.profile} status={this.props.status} updateUserStatus={ this.props.updateUserStatus}/>
+			<Profile saveProfile={this.props.saveProfile}savePhoto={this.props.savePhoto} isOwner={!this.props.params.userId} {...this.props} profile={this.props.profile} status={this.props.status} updateUserStatus={ this.props.updateUserStatus}/>
 		)
 	}
 }
@@ -48,7 +48,7 @@ let mapStateToProps = (state) => ({
 
 export default compose(
 	withAuthNavigator,
-	connect(mapStateToProps, {getProfile,getUserStatus,updateUserStatus,savePhoto}),
+	connect(mapStateToProps, {getProfile,getUserStatus,updateUserStatus,savePhoto,saveProfile}),
 	withRouter,
 	
 )(ProfileContainer);

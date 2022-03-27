@@ -5,8 +5,8 @@ import { createField, Input, Textarea } from '../../Common/FormsControls/FormsCo
 import { reduxForm } from "redux-form";
 
 
-const ProfileDataForm = ({profile,goToEditMode,placeholder, name, validators, component,}) => {
-	return <form>
+const ProfileDataForm = ({profile,handleSubmit}) => {
+	return <form onSubmit={handleSubmit}>
 	
 	
 

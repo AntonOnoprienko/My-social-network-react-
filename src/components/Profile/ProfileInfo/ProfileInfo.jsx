@@ -5,7 +5,7 @@ import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 import React, { useState } from 'react';
 import ProfileDataForm from './ProfileDataForm';
 
-const ProfileInfo = ({profile,savePhoto,isOwner}) => {
+const ProfileInfo = ({profile,savePhoto,isOwner,saveProfile}) => {
 	let [editMode, setEditMode] = useState(false);	
 	const onMainPhotoSelected = (e) => {
 		if (e.target.files.length) {
@@ -16,7 +16,9 @@ const ProfileInfo = ({profile,savePhoto,isOwner}) => {
 	if (!profile) {
 		return <Preloader />
 	}
-	
+	const onSubmit = (formData) => {
+		saveProfile(formData)
+	} 
 	return (
 		
 		<div>
@@ -29,7 +31,7 @@ const ProfileInfo = ({profile,savePhoto,isOwner}) => {
 					{<img className={classes.avatar} alt='not found' src={profile.photos.large != null ? profile.photos.large : 'https://pixy.org/src/9/93394.png'} />}
 					<span className={classes.fileInput}>{isOwner && <input type={"file"} onChange={onMainPhotoSelected} />}</span>
 				</div>
-				{editMode ? <ProfileDataForm profile={profile} /> : <ProfileData profile={profile} isOwner={isOwner} goToEditMode={ () => { setEditMode(true)}}/>}
+				{editMode ? <ProfileDataForm profile={profile} onSubmit={onSubmit}/> : <ProfileData profile={profile} isOwner={isOwner} goToEditMode={ () => { setEditMode(true)}}/>}
 			</div>
 			</div>
 	)
@@ -38,7 +40,7 @@ const ProfileInfo = ({profile,savePhoto,isOwner}) => {
 export const Contact = ({contactTitle,contactValue }) => {
 	return <div><b>{contactTitle}:</b>{contactValue}</div>
 } 
-const ProfileData = ({profile,status,updateUserStatus,isOwner,goToEditMode}) => {
+const ProfileData = ({profile,isOwner,goToEditMode,updateUserStatus,status}) => {
 	return <div className={classes.aboutMySelf}>
 		{isOwner && <div><button onClick={goToEditMode}>edit</button></div>}
 					<div>
