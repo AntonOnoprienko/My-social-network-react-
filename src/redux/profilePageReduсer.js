@@ -13,7 +13,7 @@ let initialState = {
       id: 1,
       name: "Arthur Onoprienko",
       message: "Всем привет я тут новенький!!",
-      url: "https://www.blast.hk/attachments/68493/",
+      url: "https://www.https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiffs.ru%2Fgifki-prikolnye-avatary%2F&psig=AOvVaw1qH9ff4CTnDI0cNhc8HPzB&ust=1648664595045000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMDjm7T46_YCFQAAAAAdAAAAABAD.hk/attachments/68493/",
       likeCount: 5,
     },
     {
@@ -47,7 +47,7 @@ let initialState = {
     {
       id: 6,
       name: "Vitalii Shmatko",
-      message: "Это будет собачья вписка",
+      message: "Это будет весело!",
       url: "https://www.meme-arsenal.com/memes/a5dd2f55b36488a10172f4f84352846b.jpg",
       likeCount: 23,
     },
