@@ -4,6 +4,7 @@ import Preloader from '../../Common/Preloader/Preloader';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 import React, { useState } from 'react';
 import ProfileDataForm from './ProfileDataForm';
+import wallpaper from '../../../assets/images/wallpaper.jpeg'
 
 const ProfileInfo = ({profile,savePhoto,isOwner,saveProfile,status,updateUserStatus}) => {
 	let [editMode, setEditMode] = useState(false);	
@@ -24,7 +25,7 @@ const ProfileInfo = ({profile,savePhoto,isOwner,saveProfile,status,updateUserSta
 		
 	<div>
 			<div>
-				<img className={ classes.walpapper } alt='not found' src='https://static-sl.insales.ru/images/products/1/328/193446216/11-019_%D0%9D%D1%8C%D1%8E-%D0%99%D0%BE%D1%80%D0%BA_%D1%87%D0%B1.jpg' />
+				<img className={classes.walpapper} alt='not found' src={wallpaper} />
 			</div>
 			
 		<div className={classes.myInfo}>

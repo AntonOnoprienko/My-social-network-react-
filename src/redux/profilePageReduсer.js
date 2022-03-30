@@ -13,7 +13,7 @@ let initialState = {
       id: 1,
       name: "Arthur Onoprienko",
       message: "Всем привет я тут новенький!!",
-      url: "https://www.https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiffs.ru%2Fgifki-prikolnye-avatary%2F&psig=AOvVaw1qH9ff4CTnDI0cNhc8HPzB&ust=1648664595045000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMDjm7T46_YCFQAAAAAdAAAAABAD.hk/attachments/68493/",
+      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQia4OplrCNe7nvXgSfm31BVW4f6mN4pV4Q9Q&usqp=CAU",
       likeCount: 5,
     },
     {
